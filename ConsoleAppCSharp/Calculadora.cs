@@ -1,0 +1,60 @@
+﻿using System;
+
+namespace ConsoleAppCSharp
+{
+	public class Calculadora
+	{
+
+		public bool EhPar(int numero)
+		{
+			if (numero % 2 == 0)
+				return true;
+			return false;
+		}
+
+		public decimal CalcularTotalJurosSimples(decimal valorDaParcela, decimal percentual)
+		{
+			return Math.Round((valorDaParcela * percentual) / 100.0M, decimals: 2);
+		}
+
+		public int CalcularMaximoDivisorComum(int[] numeros)
+		{
+			var maior = ConsultarMaiorNumero(numeros);
+			var mdc = 0;
+
+			for (int n = 1; n <= maior; n++)
+			{
+				var divisores = 0;
+				for (int i = 0; i < numeros.Length; i++)
+				{
+					if (numeros[i] % n == 0)
+						divisores++;
+				}
+				if (divisores == numeros.Length)
+					mdc = n;
+			}
+
+			return mdc;
+		}
+
+		private int ConsultarMaiorNumero(int[] numeros)
+		{
+			var maior = numeros[0];
+
+			for (int n = 1; n < numeros.Length; n++)
+			{
+				if (numeros[n] > maior)
+					maior = numeros[n];
+			}
+			return maior;
+		}
+
+		public decimal CalcularValorMontanteComJurosCompostos(decimal parcela, decimal taxa, int meses)
+		{
+
+			var resultado = parcela * (decimal)Math.Pow((double)(1M + taxa / 100M), meses);
+
+			return Math.Round(resultado, decimals: 2);
+		}
+	}
+}
