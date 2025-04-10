@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ConsoleAppCSharpTests/bin/Debug
+/ConsoleAppCSharpTests/obj/Debug
+/ConsoleAppCSharpTests/Properties
+/ConsoleAppCSharp/bin
+/ConsoleAppCSharp/obj
+/ConsoleAppCSharp/Properties
+/ConsoleAppCSharp/.vs/ConsoleAppCSharp
+/ConsoleAppCSharp/packages
