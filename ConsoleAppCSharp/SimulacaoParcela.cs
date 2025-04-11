@@ -13,10 +13,16 @@ namespace ConsoleAppCSharp
 
 		public decimal ValorTotal { get; }
 
-		public SimulacaoParcela(int quantidade, decimal valorTotal)
+		public decimal ValorJuros { get; }
+
+		public decimal ValorParcela {  get; }
+
+		public SimulacaoParcela(int quantidade, decimal valorTotal, decimal valorJuros, decimal valorParcela)
 		{
 			Quantidade = quantidade;
 			ValorTotal = valorTotal;
+			ValorJuros = valorJuros;
+			ValorParcela = valorParcela;
 		}
 	}
 }
