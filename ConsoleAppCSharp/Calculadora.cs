@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleAppCSharp
 {
@@ -55,6 +56,21 @@ namespace ConsoleAppCSharp
 			var resultado = parcela * (decimal)Math.Pow((double)(1M + taxa / 100M), meses);
 
 			return Math.Round(resultado, decimals: 2);
+		}
+
+		public List<SimulacaoParcela> CalcularSimulacaoDeFinanciamentos(decimal valorFinancimento, decimal taxa, int parcelas)
+		{
+			var lista = new List<SimulacaoParcela>();
+
+			for (int parcela = 0; parcela < parcelas; parcela++)
+			{
+				var meses = parcela + 1;
+				var valorTotal = CalcularValorMontanteComJurosCompostos(valorFinancimento, taxa, meses);
+				var financimento = new SimulacaoParcela(meses, valorTotal);
+				lista.Add(financimento);
+			}
+
+			return lista;
 		}
 	}
 }

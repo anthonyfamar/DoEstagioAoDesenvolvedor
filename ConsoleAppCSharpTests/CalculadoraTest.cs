@@ -100,5 +100,35 @@ namespace ConsoleAppCSharpTests
 				throw new Exception("O Valor da parcela não foi calculado corretamente: " + montante.ToString());
 			}
 		}
+
+		[TestMethod]
+		public void SeRealizarUmaSimulacaoDeParcelamentoDeveEncontrarOsValoresCorretos()
+		{
+			//Arrange
+			var calculadora = new Calculadora();
+			var valorFinancimento = 562.3M;
+			var taxa = 1.5M;
+			var parcelas = 3;
+
+			//Act
+			var simulacao = calculadora.CalcularSimulacaoDeFinanciamentos(valorFinancimento, taxa, parcelas);
+
+			//Assert
+
+			if (simulacao.Count != 3)
+				throw new Exception("Não foi calculado a quantidade correta de parcelas!");
+
+			var valoresEsperados = new decimal[] { 570.73M, 579.3M, 587.98M };
+
+			for (int parcela = 1; parcela <= 3; parcela++)
+			{
+				if (simulacao[parcela - 1].Quantidade != parcela)
+					throw new Exception("A quantidade de parcelas da parcela [" + parcela.ToString() + "] esta errada!");
+
+				if (simulacao[parcela - 1].ValorTotal != valoresEsperados[parcela - 1])
+					throw new Exception("O valor da parcela [" + parcela.ToString() + "] está errado!" +
+					$"Esperavamos {valoresEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].ValorTotal}");
+			}
+		}
 	}
 }

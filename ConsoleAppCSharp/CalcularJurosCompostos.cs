@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppCSharp
 {
-	internal class Program
+	internal class CalcularJurosCompostos
 	{
 		static void Main(string[] args)
 		{
