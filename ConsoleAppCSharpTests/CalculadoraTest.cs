@@ -118,7 +118,13 @@ namespace ConsoleAppCSharpTests
 			if (simulacao.Count != 3)
 				throw new Exception("Não foi calculado a quantidade correta de parcelas!");
 
-			var valoresEsperados = new decimal[] { 570.73M, 579.3M, 587.98M };
+			var primeiroVencimento = new DateTime(day: 14, month: 5, year: 2025);
+			var segundoVencimento = new DateTime(day: 13, month: 6, year: 2025);
+			var terceiroVencimento = new DateTime(day: 13, month: 7, year: 2025);
+
+			var valoresEsperados = new decimal[] { 570.73M, 579.3M, 587.97M };
+			var vencimentosEsperados = new DateTime[] { primeiroVencimento, segundoVencimento, terceiroVencimento };
+
 
 			for (int parcela = 1; parcela <= 3; parcela++)
 			{
@@ -128,6 +134,10 @@ namespace ConsoleAppCSharpTests
 				if (simulacao[parcela - 1].ValorTotal != valoresEsperados[parcela - 1])
 					throw new Exception("O valor da parcela [" + parcela.ToString() + "] está errado!" +
 					$"Esperavamos {valoresEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].ValorTotal}");
+
+				if (simulacao[parcela - 1].Vencimento != vencimentosEsperados[parcela - 1])
+					throw new Exception("O vencimento da parcela [" + parcela.ToString() + "] está errado!" +
+					$"Esperavamos {vencimentosEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].Vencimento}");
 			}
 		}
 	}

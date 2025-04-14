@@ -9,20 +9,25 @@ namespace ConsoleAppCSharp
 	public class SimulacaoParcela
 	{
 
+		
 		public int Quantidade { get; }
 
-		public decimal ValorTotal { get; }
+		public decimal ValorTotal 
+		{ get { return ValorParcela * Quantidade; } }
+
 
 		public decimal ValorJuros { get; }
 
 		public decimal ValorParcela {  get; }
 
-		public SimulacaoParcela(int quantidade, decimal valorTotal, decimal valorJuros, decimal valorParcela)
+		public DateTime Vencimento { get; }
+
+		public SimulacaoParcela(int quantidade, decimal valorJuros, decimal valorParcela, DateTime vencimento)
 		{
 			Quantidade = quantidade;
-			ValorTotal = valorTotal;
 			ValorJuros = valorJuros;
 			ValorParcela = valorParcela;
+			Vencimento = vencimento;
 		}
 	}
 }

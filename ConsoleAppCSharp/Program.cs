@@ -30,20 +30,21 @@ namespace ConsoleAppCSharp
 
 			var listaFinanciamento = calculadora.CalcularSimulacaoDeFinanciamentos(valorFinancimento, taxa, parcelas);
 
-			//foreach (var parcela in listaFinanciamento)
-			//{
-			//	Console.WriteLine($"O Valor do financiamento é: {parcelas} R$ " + parcela.ValorTotal.ToString());
-			//}
-
 			Console.WriteLine("\nFinanciamento...\n");
+
+			foreach (var parcela in listaFinanciamento)
+			{
+				Console.WriteLine($"{parcela.Quantidade} x {parcela.ValorParcela} ===> R$ {parcela.ValorTotal} [Valor do juros: R$ {parcela.ValorJuros}.]");
+				Thread.Sleep(500);
+			}
 						
 
-			for (int i = 1; i <= parcelas; i++)
-			{
-				Console.WriteLine($"{i} x {listaFinanciamento[i-1].ValorParcela:N2} ===> R$ {listaFinanciamento[i-1].ValorTotal:N2} " +
-				$"[Valor do Juros: R$ {listaFinanciamento[i-1].ValorJuros:N2}]");
-				Thread.Sleep(1 * 500);
-			}
+			//for (int i = 1; i <= parcelas; i++)
+			//{
+			//	Console.WriteLine($"{i} x {listaFinanciamento[i-1].ValorParcela:N2} ===> R$ {listaFinanciamento[i-1].ValorTotal:N2} " +
+			//	$"[Valor do Juros: R$ {listaFinanciamento[i-1].ValorJuros:N2}]");
+			//	Thread.Sleep(1 * 500);
+			//}
 		}
 	}
 }
