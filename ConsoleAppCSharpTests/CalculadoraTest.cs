@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using ConsoleAppCSharp;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConsoleAppCSharpTests
@@ -135,9 +136,13 @@ namespace ConsoleAppCSharpTests
 					throw new Exception("O valor da parcela [" + parcela.ToString() + "] está errado!" +
 					$"Esperavamos {valoresEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].ValorTotal}");
 
-				if (simulacao[parcela - 1].Vencimento != vencimentosEsperados[parcela - 1])
-					throw new Exception("O vencimento da parcela [" + parcela.ToString() + "] está errado!" +
-					$"Esperavamos {vencimentosEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].Vencimento}");
+				simulacao[parcela - 1].Vencimento
+				.Should()
+				.Be(vencimentosEsperados[parcela - 1]); //maneira diferente de fazer o código comentado abaixo
+
+				//if (simulacao[parcela - 1].Vencimento != vencimentosEsperados[parcela - 1])
+				//	throw new Exception("O vencimento da parcela [" + parcela.ToString() + "] está errado!" +
+				//	$"Esperavamos {vencimentosEsperados[parcela - 1]}, porém está calculando {simulacao[parcela - 1].Vencimento}");
 			}
 		}
 	}

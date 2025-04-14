@@ -34,10 +34,11 @@ namespace ConsoleAppCSharp
 
 			foreach (var parcela in listaFinanciamento)
 			{
-				Console.WriteLine($"{parcela.Quantidade} x {parcela.ValorParcela} ===> R$ {parcela.ValorTotal} [Valor do juros: R$ {parcela.ValorJuros}.]");
+				Console.WriteLine($"{parcela.Quantidade} x {parcela.ValorParcela} ===> R$ {parcela.ValorTotal} " +
+								  $"[Valor do juros: R$ {parcela.ValorJuros}.] {parcela.Vencimento.ToString("dd/MM/yyyy")}");
 				Thread.Sleep(500);
 			}
-						
+
 
 			//for (int i = 1; i <= parcelas; i++)
 			//{

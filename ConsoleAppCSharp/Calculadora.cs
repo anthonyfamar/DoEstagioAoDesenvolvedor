@@ -83,6 +83,6 @@ namespace ConsoleAppCSharp
 		public List<SimulacaoParcela> CalcularSimulacaoDeFinanciamentos(decimal valorFinancimento, decimal taxa, int parcelas)
 		{
 			return CalcularSimulacaoDeFinanciamentos(valorFinancimento, taxa, parcelas, dataBase: DateTime.Now.Date);
-		}
+		}    
 	}
 }
