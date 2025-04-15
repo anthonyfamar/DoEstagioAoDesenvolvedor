@@ -22,9 +22,5 @@ namespace CalculadoraWeb1
 			}
 			return listaFibonacci;
 		}
-		public void TestarTeoriaDeInstanciacao(int numero, string nome, bool eh) 
-		{
-			
-		}
 	}
 }
