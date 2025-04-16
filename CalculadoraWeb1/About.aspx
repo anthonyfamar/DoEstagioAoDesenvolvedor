@@ -37,6 +37,20 @@
 		<asp:Panel runat="server" ID="CalculoDeJurosPanel" Visible="false">
 			<h1>Calculadora de Juros</h1>
 
+			Informe o valor de financiamento: <asp:TextBox runat="server" ID="TextBoxValorFinanciamento" OnTextChanged="TextBoxValorFinanciamento_TextChanged"></asp:TextBox><br />
+			Informe o porcentual da taxa: <asp:TextBox runat="server" ID="TextBoxPorcentualTaxa"></asp:TextBox><br />
+			Informe em quantos meses deseja quitar: <asp:TextBox runat="server" ID="TextBoxMesesQuitacao"></asp:TextBox>
+
+			<br />
+			<br />
+
+			<asp:Button runat="server" ID="CalcularFinanciamento" OnClick="CalcularFinanciamento_Click" Text="Calcular" />
+
+			<br />
+			<br />
+			<br />
+
+			<asp:Label runat="server" ID="LabelResultadoFianciamento" Text="Label"></asp:Label>
 		</asp:Panel>
 	</main>
 

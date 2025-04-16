@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -94,5 +95,13 @@ namespace CalculadoraWeb1
 			FibonacciPanel.Visible = false;
 			CalculoDeJurosPanel.Visible = true;
 		}
+
+		protected void CalcularFinanciamento_Click(object sender, EventArgs e)
+		{
+			var calculadora = new Calculadora();
+			var listaFinanciamento = calculadora.CalcularSimulacaoDeFinancimentos(decimal valorFinanciamento, taxa, parcelas);
+
+		}
+
 	}
 }

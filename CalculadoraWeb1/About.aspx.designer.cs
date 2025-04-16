@@ -85,5 +85,50 @@ namespace CalculadoraWeb1
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Panel CalculoDeJurosPanel;
+
+		/// <summary>
+		/// TextBoxValorFinanciamento control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBoxValorFinanciamento;
+
+		/// <summary>
+		/// TextBoxPorcentualTaxa control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBoxPorcentualTaxa;
+
+		/// <summary>
+		/// TextBoxMesesQuitacao control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBoxMesesQuitacao;
+
+		/// <summary>
+		/// CalcularFinanciamento control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button CalcularFinanciamento;
+
+		/// <summary>
+		/// LabelResultadoFianciamento control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label LabelResultadoFianciamento;
 	}
 }
