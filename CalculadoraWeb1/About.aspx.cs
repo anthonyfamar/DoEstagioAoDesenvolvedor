@@ -10,15 +10,58 @@ namespace CalculadoraWeb1
 {
 	public partial class About : Page
 	{
+
+		public int QuantidadeDeCliques { get; set; }
+
+		public int QuantidadeDeAlteracoes
+		{
+			get
+			{
+				return int.Parse(ViewState["QuantidadeDeAlteracoes"].ToString());
+			}
+			set
+			{
+				ViewState["QuantidadeDeAlteracoes"] = value.ToString();
+			}
+		}
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
+
+			if (!IsPostBack)
+			{
+				TextBox1.Text = "5";
+				ImprimirSequenciaFibonacci(5);
+				QuantidadeDeCliques = 0;
+				QuantidadeDeAlteracoes = 0;
+			}
+			else
+			{
+				QuantidadeDeCliques = int.Parse(VisitasLabel.Text);
+			}
+
+			QuantidadeDeCliques += 1;
+			VisitasLabel.Text = QuantidadeDeCliques.ToString();
 		}
 
 		protected void Button1_Click(object sender, EventArgs e)
 		{
+			if (int.TryParse(TextBox1.Text, out int quantidade))
+			{
+				ImprimirSequenciaFibonacci(quantidade);
+			}
+			else
+			{
+				Label1.Text = "Favor informar um número válido!";
+			}
+
+		}
+
+		private void ImprimirSequenciaFibonacci(int quantidade)
+		{
 			var calculadora = new Calculadora();
-			var lista = calculadora.GerarNumerosFibonacci(10);
+			var lista = calculadora.GerarNumerosFibonacci(quantidade);
 
 			var html = new StringBuilder();
 			html.Append("<ul>");
@@ -31,6 +74,25 @@ namespace CalculadoraWeb1
 			html.Append("</ul>");
 
 			Label1.Text = html.ToString();
+		}
+
+		protected void TextBox1_TextChanged(object sender, EventArgs e)
+		{
+			TextoModificado.Text = "Valor Alterado";
+			QuantidadeDeAlteracoes += 1;
+			AlteracoesLabel.Text = QuantidadeDeAlteracoes.ToString();
+		}
+
+		protected void Unnamed_Click(object sender, EventArgs e)
+		{
+			FibonacciPanel.Visible = true;
+			CalculoDeJurosPanel.Visible = false;
+		}
+
+		protected void Unnamed_Click1(object sender, EventArgs e)
+		{
+			FibonacciPanel.Visible = false;
+			CalculoDeJurosPanel.Visible = true;
 		}
 	}
 }

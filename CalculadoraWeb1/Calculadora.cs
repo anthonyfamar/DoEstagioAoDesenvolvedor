@@ -7,9 +7,9 @@ namespace CalculadoraWeb1
 {
 	public class Calculadora
 	{
-		public List<int> GerarNumerosFibonacci(int numero)
+		public List<double> GerarNumerosFibonacci(double numero)
 		{
-			var listaFibonacci = new List<int>();
+			var listaFibonacci = new List<double>();
 			listaFibonacci.Add(1);
 			listaFibonacci.Add(1);
 
