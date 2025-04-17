@@ -8,6 +8,7 @@ namespace CalculadoraWeb1
 {
 	public class Calculadora
 	{
+
 		public List<double> GerarNumerosFibonacci(double numero)
 		{
 			var listaFibonacci = new List<double>();

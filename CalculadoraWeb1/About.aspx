@@ -5,7 +5,8 @@
 
 		<div>
 			<asp:Button runat="server" Text="Calcular Fibonacci" OnClick="Unnamed_Click"/> <br />
-			<asp:Button runat="server" text="Calcular Juros" OnClick="Unnamed_Click1" />
+			<asp:Button runat="server" text="Calcular Juros" OnClick="Unnamed_Click1" /> <br />
+			<asp:Button runat="server" Text="Gerenciar Nomes" OnClick="Unnamed_Click2" />
 		</div>
 
 		<asp:Panel runat="server" ID="FibonacciPanel" Visible="False">
@@ -71,6 +72,34 @@
 				</ItemTemplate>
 				<FooterTemplate>
 				</table>
+				</FooterTemplate>
+			</asp:Repeater>
+		</asp:Panel>
+
+		<asp:Panel runat="server" ID="GerenciadorDeNomePanel" Visible="false">
+			<h1>Gerenciado de Nomes</h1>
+
+			Informe o nome: <asp:TextBox runat="server" ID="TextBoxInformeNome"></asp:TextBox>
+
+			<br />
+			<br />
+
+			<asp:Button runat="server" ID="AdicionarNome" OnClick="AdicionarNome_Click" Text="Adicionar"/>
+			<asp:Label runat="server" ID="StatusLabelNomes"></asp:Label>
+			
+			<br />
+			<br />
+			<br />
+
+			<asp:Repeater runat ="server" ID="MinhaLista">
+				<HeaderTemplate>
+					<ul>
+				</HeaderTemplate>
+				<ItemTemplate>
+					<li><%# Container.DataItem %></li>
+				</ItemTemplate>
+				<FooterTemplate>
+				</ul>
 				</FooterTemplate>
 			</asp:Repeater>
 		</asp:Panel>

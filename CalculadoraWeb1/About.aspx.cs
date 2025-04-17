@@ -12,6 +12,18 @@ namespace CalculadoraWeb1
 	public partial class About : Page
 	{
 
+		public List<string> Nomes
+		{
+			get
+			{
+				return (List<string>)ViewState["Nomes"];
+			}
+			set
+			{
+				ViewState["Nomes"] = value;				
+			}
+		}
+
 		public int QuantidadeDeCliques { get; set; }
 
 		public int QuantidadeDeAlteracoes
@@ -88,12 +100,14 @@ namespace CalculadoraWeb1
 		{
 			FibonacciPanel.Visible = true;
 			CalculoDeJurosPanel.Visible = false;
+			GerenciadorDeNomePanel.Visible = false;
 		}
 
 		protected void Unnamed_Click1(object sender, EventArgs e)
 		{
 			FibonacciPanel.Visible = false;
 			CalculoDeJurosPanel.Visible = true;
+			GerenciadorDeNomePanel.Visible = false;
 		}
 
 		protected void CalcularFinanciamentoButton_Click(object sender, EventArgs e)
@@ -106,7 +120,7 @@ namespace CalculadoraWeb1
 					{
 						var calculadora = new Calculadora();
 						var listaFinanciamento = calculadora.CalcularSimulacaoDeFinancimentos(valorFinanciamento, taxa, parcelas, dataBase: DateTime.Now.Date);
-						
+
 						StatusLabel.Text = "Financiamento calculado com sucesso!";
 
 						MinhaTabela.DataSource = listaFinanciamento;
@@ -128,5 +142,21 @@ namespace CalculadoraWeb1
 			}
 		}
 
+		protected void Unnamed_Click2(object sender, EventArgs e)
+		{
+
+			FibonacciPanel.Visible = false;
+			CalculoDeJurosPanel.Visible = false;
+			GerenciadorDeNomePanel.Visible = true;
+
+		}
+
+		protected void AdicionarNome_Click(object sender, EventArgs e)
+		{
+			Nomes.Add(TextBoxInformeNome.Text);
+
+			MinhaLista.DataSource = Nomes;
+			MinhaLista.DataBind();
+		}
 	}
 }
