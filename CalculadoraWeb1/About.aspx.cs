@@ -106,9 +106,11 @@ namespace CalculadoraWeb1
 					{
 						var calculadora = new Calculadora();
 						var listaFinanciamento = calculadora.CalcularSimulacaoDeFinancimentos(valorFinanciamento, taxa, parcelas, dataBase: DateTime.Now.Date);
+						
+						StatusLabel.Text = "Financiamento calculado com sucesso!";
+
 						MinhaTabela.DataSource = listaFinanciamento;
 						MinhaTabela.DataBind();
-						StatusLabel.Text = "Financiamento calculado com sucesso!";
 					}
 					else
 					{
