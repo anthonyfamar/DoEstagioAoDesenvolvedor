@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CalculadoraWeb1
 {
-	public class SimulacaoParcela
+	public class SimulacaoParcela : System.Web.UI.Page
 	{
 		public int Quantidade { get; }
 
@@ -18,7 +18,7 @@ namespace CalculadoraWeb1
 
 		public DateTime Vencimento { get; }
 
-		public SimulacaoParcela(int quantidade, decimal valorParcela, decimal valorJuros, DateTime vencimento)
+		public SimulacaoParcela(int quantidade, decimal valorJuros, decimal valorParcela, DateTime vencimento)
 		{
 			Quantidade = quantidade;
 			ValorParcela = valorParcela;

@@ -96,11 +96,34 @@ namespace CalculadoraWeb1
 			CalculoDeJurosPanel.Visible = true;
 		}
 
-		protected void CalcularFinanciamento_Click(object sender, EventArgs e)
+		protected void CalcularFinanciamentoButton_Click(object sender, EventArgs e)
 		{
-			var calculadora = new Calculadora();
-			var listaFinanciamento = calculadora.CalcularSimulacaoDeFinancimentos(decimal valorFinanciamento, taxa, parcelas);
-
+			if (decimal.TryParse(TextBoxValorFinanciamento.Text, out decimal valorFinanciamento))
+			{
+				if (decimal.TryParse(TextBoxPercentualTaxa.Text, out decimal taxa))
+				{
+					if (int.TryParse(TextBoxMesesQuitacao.Text, out int parcelas))
+					{
+						var calculadora = new Calculadora();
+						var listaFinanciamento = calculadora.CalcularSimulacaoDeFinancimentos(valorFinanciamento, taxa, parcelas, dataBase: DateTime.Now.Date);
+						MinhaTabela.DataSource = listaFinanciamento;
+						MinhaTabela.DataBind();
+						StatusLabel.Text = "Financiamento calculado com sucesso!";
+					}
+					else
+					{
+						StatusLabel.Text = "Insira uma quantidade de parcelas válidas!";
+					}
+				}
+				else
+				{
+					StatusLabel.Text = "Insira uma taxa válida!";
+				}
+			}
+			else
+			{
+				StatusLabel.Text = "Insira um valor de financiamento válido!";
+			}
 		}
 
 	}

@@ -26,9 +26,9 @@ namespace CalculadoraWeb1
 
 		public decimal CalcularValorMontanteComjurosCompostos(decimal parcela, decimal taxa, int meses)
 		{
-			var resultado = parcela * (decimal)Math.Pow((double)(1M + taxa), meses);
+			var resultado = parcela * (decimal)Math.Pow((double)(1M + taxa / 100M), meses);
 
-			return resultado;
+			return Math.Round(resultado, decimals: 2);
 		}
 
 		public List<SimulacaoParcela> CalcularSimulacaoDeFinancimentos(decimal valorFinanciamento, decimal taxa, int parcelas, DateTime dataBase)
@@ -36,11 +36,11 @@ namespace CalculadoraWeb1
 			var lista = new List<SimulacaoParcela>();
 			var vencimento = dataBase;
 
-			for (int parcela = 0; parcela < parcelas, parcela++)
+			for (int i = 0; i < parcelas; i++)
 			{
-				var meses = parcela + 1;
-				var valorTotal = CalcularValorMontanteComjurosCompostos(parcela, taxa, meses);
-				var valorParcela = Math.Round(valorTotal / meses, decimals: 2);
+				var meses = i + 1;
+				var valorTotal = CalcularValorMontanteComjurosCompostos(valorFinanciamento, taxa, meses);
+				var valorParcela = Math.Round((valorTotal / meses), decimals: 2);
 				var totalJuros = Math.Round((valorParcela * meses) - valorFinanciamento, decimals: 2);
 
 				vencimento = vencimento.AddDays(30);

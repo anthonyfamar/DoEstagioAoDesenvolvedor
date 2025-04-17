@@ -96,13 +96,13 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.TextBox TextBoxValorFinanciamento;
 
 		/// <summary>
-		/// TextBoxPorcentualTaxa control.
+		/// TextBoxPercentualTaxa control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBoxPorcentualTaxa;
+		protected global::System.Web.UI.WebControls.TextBox TextBoxPercentualTaxa;
 
 		/// <summary>
 		/// TextBoxMesesQuitacao control.
@@ -123,12 +123,21 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.Button CalcularFinanciamento;
 
 		/// <summary>
-		/// LabelResultadoFianciamento control.
+		/// StatusLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label LabelResultadoFianciamento;
+		protected global::System.Web.UI.WebControls.Label StatusLabel;
+
+		/// <summary>
+		/// MinhaTabela control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Repeater MinhaTabela;
 	}
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="CalculadoraWeb1.About" %>
+﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs"  Inherits="CalculadoraWeb1.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
@@ -37,20 +37,42 @@
 		<asp:Panel runat="server" ID="CalculoDeJurosPanel" Visible="false">
 			<h1>Calculadora de Juros</h1>
 
-			Informe o valor de financiamento: <asp:TextBox runat="server" ID="TextBoxValorFinanciamento" OnTextChanged="TextBoxValorFinanciamento_TextChanged"></asp:TextBox><br />
-			Informe o porcentual da taxa: <asp:TextBox runat="server" ID="TextBoxPorcentualTaxa"></asp:TextBox><br />
+			Informe o valor de financiamento: <asp:TextBox runat="server" ID="TextBoxValorFinanciamento"></asp:TextBox><br />
+			Informe o percentual da taxa: <asp:TextBox runat="server" ID="TextBoxPercentualTaxa"></asp:TextBox><br />
 			Informe em quantos meses deseja quitar: <asp:TextBox runat="server" ID="TextBoxMesesQuitacao"></asp:TextBox>
 
 			<br />
 			<br />
 
-			<asp:Button runat="server" ID="CalcularFinanciamento" OnClick="CalcularFinanciamento_Click" Text="Calcular" />
+			<asp:Button runat="server" ID="CalcularFinanciamento" OnClick="CalcularFinanciamentoButton_Click" Text="Calcular" />
+			<asp:Label runat="server" ID="StatusLabel"></asp:Label>
 
 			<br />
 			<br />
 			<br />
 
-			<asp:Label runat="server" ID="LabelResultadoFianciamento" Text="Label"></asp:Label>
+			<asp:Repeater runat="server" ID="MinhaTabela">
+				<HeaderTemplate>
+					<table style="border: 1px solid black; text-align:center" width="40%">
+						<tr style="border:1px solid black; background-color: #c2c2c2" >
+							<th style="border:1px solid black" >Parcelas</th>
+							<th style="border:1px solid black" >Valor Total</th>
+							<th style="border:1px solid black" >Valor do Juros</th>
+							<th style="border:1px solid black" >Vencimento</th>
+						</tr>
+				</HeaderTemplate>
+				<ItemTemplate>
+					<tr style="border:1px solid black" >
+						<td style="border:1px solid black" ><%# DataBinder.Eval(Container.DataItem, "Quantidade") %> x <%# DataBinder.Eval(Container.DataItem, "ValorParcela") %></td>
+						<td style="border:1px solid black" ><%# DataBinder.Eval(Container.DataItem, "ValorTotal") %></td>
+						<td style="border:1px solid black" ><%# DataBinder.Eval(Container.DataItem, "ValorJuros") %></td>
+						<td style="border:1px solid black" ><%# ((DateTime)DataBinder.Eval(Container.DataItem, "Vencimento")).ToString("dd/MM/yyyy") %></td>
+					</tr>
+				</ItemTemplate>
+				<FooterTemplate>
+				</table>
+				</FooterTemplate>
+			</asp:Repeater>
 		</asp:Panel>
 	</main>
 
