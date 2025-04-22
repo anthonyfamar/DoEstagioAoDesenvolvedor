@@ -13,7 +13,7 @@ namespace CalculadoraWeb1
 		public string NumeroAtual
 		{
 			get { return NumeroAtualLabel.Text; }
-			set {  NumeroAtualLabel.Text = value;}
+			set { NumeroAtualLabel.Text = value; }
 		}
 
 		protected void Page_Load(object sender, EventArgs e)
@@ -68,7 +68,10 @@ namespace CalculadoraWeb1
 
 		protected void Numero0Button_Click(object sender, EventArgs e)
 		{
-			NumeroAtual = NumeroAtual + "0";
+			if (NumeroAtual != "0")
+			{
+				NumeroAtual = NumeroAtual + "0";
+			}
 		}
 	}
 }

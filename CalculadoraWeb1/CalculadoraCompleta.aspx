@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			Atual: <asp:Label runat="server" ID="NumeroAtualLabel"></asp:Label>
+			Atual: <asp:Label runat="server" ID="NumeroAtualLabel" Text="0" ></asp:Label>
 		</div>
 	</div>
 	<div class="row m-2">
