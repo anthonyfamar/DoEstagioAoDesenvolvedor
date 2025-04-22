@@ -77,7 +77,7 @@
 		</asp:Panel>
 
 		<asp:Panel runat="server" ID="GerenciadorDeNomePanel" Visible="false">
-			<h1>Gerenciado de Nomes</h1>
+			<h1>Gerenciador de Nomes</h1>
 
 			Informe o nome: <asp:TextBox runat="server" ID="TextBoxInformeNome"></asp:TextBox>
 
