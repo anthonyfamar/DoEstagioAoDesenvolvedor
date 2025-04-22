@@ -129,5 +129,22 @@ namespace CalculadoraWeb1
 			}
 			NumeroAtual = "0";
 		}
+
+		protected void OperacaoSubtrairButton_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(PrimeiroNumero))
+			{
+				PrimeiroNumero = NumeroAtual;
+			}
+			else
+			{
+				var primeiro = long.Parse((PrimeiroNumero));
+				var atual = long.Parse((NumeroAtual));
+
+				var resultado = primeiro - atual;
+				PrimeiroNumero = resultado.ToString();
+			}
+			NumeroAtual = "0";
+		}
 	}
 }

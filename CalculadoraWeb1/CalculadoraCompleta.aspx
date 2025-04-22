@@ -48,6 +48,7 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-4">
+			<asp:Button runat="server" ID="OperacaoSubtrairButton" Text="-" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSubtrairButton_Click" />
 		</div>
 		<div class="col-4">
 			<asp:Button runat="server" ID="Numero0Button" Text="0" CssClass="btn btn-secondary btn-lg" OnClick="Numero0Button_Click"/>
