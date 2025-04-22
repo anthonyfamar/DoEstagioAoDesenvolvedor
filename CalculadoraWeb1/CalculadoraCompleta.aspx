@@ -53,6 +53,7 @@
 			<asp:Button runat="server" ID="Numero0Button" Text="0" CssClass="btn btn-secondary btn-lg" OnClick="Numero0Button_Click"/>
 		</div>
 		<div class="col-4">
+			<asp:Button runat="server" ID="OperacaoSomarButton" Text="+" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSomarButton_Click" />
 		</div>
 	</div>
 </asp:Content>

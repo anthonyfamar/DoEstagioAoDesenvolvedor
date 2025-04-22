@@ -10,6 +10,18 @@ namespace CalculadoraWeb1
 	public partial class CalculadoraCompleta : System.Web.UI.Page
 	{
 
+		public string PrimeiroNumero
+		{
+			get
+			{
+				return PrimeiroNumeroLabel.Text;
+			}
+			set
+			{
+				PrimeiroNumeroLabel.Text = value;
+			}
+		}
+
 		public string NumeroAtual
 		{
 			get { return NumeroAtualLabel.Text; }
@@ -72,6 +84,11 @@ namespace CalculadoraWeb1
 			{
 				NumeroAtual = NumeroAtual + "0";
 			}
+		}
+
+		protected void OperacaoSomarButton_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
