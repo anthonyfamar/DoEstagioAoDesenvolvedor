@@ -164,6 +164,6 @@ namespace CalculadoraWeb1
 
 			MinhaLista.DataSource = Nomes;
 			MinhaLista.DataBind();
-		}
+}
 	}
 }

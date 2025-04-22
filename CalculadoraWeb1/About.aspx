@@ -96,7 +96,7 @@
 					<ul>
 				</HeaderTemplate>
 				<ItemTemplate>
-					<li><%# Container.DataItem %></li>
+					<li><a href="#" onclick="alert('<%# Container.DataItem %>')"><%# Container.DataItem %></a></li>
 				</ItemTemplate>
 				<FooterTemplate>
 				</ul>
