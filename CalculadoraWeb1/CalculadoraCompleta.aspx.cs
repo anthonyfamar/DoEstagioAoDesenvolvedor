@@ -88,7 +88,19 @@ namespace CalculadoraWeb1
 
 		protected void OperacaoSomarButton_Click(object sender, EventArgs e)
 		{
+			if (string.IsNullOrEmpty(PrimeiroNumero))
+			{
+				PrimeiroNumero = NumeroAtual;
+			}
+			else
+			{
+				var primeiro = long.Parse(PrimeiroNumero);
+				var atual = long.Parse(NumeroAtual);
 
+				var resultado = primeiro + atual;
+				PrimeiroNumero = resultado.ToString();
+			}
+			NumeroAtual = "0";
 		}
 	}
 }
