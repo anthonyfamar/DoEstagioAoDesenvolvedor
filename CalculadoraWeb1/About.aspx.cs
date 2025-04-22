@@ -154,7 +154,6 @@ namespace CalculadoraWeb1
 
 		}
 
-		
 
 		protected void AdicionarNome_Click(object sender, EventArgs e)
 		{
@@ -164,6 +163,16 @@ namespace CalculadoraWeb1
 
 			MinhaLista.DataSource = Nomes;
 			MinhaLista.DataBind();
-}
+		}
+
+		public string InverterONome(string NomeOriginal)
+		{
+			if (string.IsNullOrEmpty(NomeOriginal))
+				return NomeOriginal;
+
+			char[] ConverterStringNomeEmCaracteres = NomeOriginal.ToCharArray();
+			Array.Reverse(ConverterStringNomeEmCaracteres);
+			return new string(ConverterStringNomeEmCaracteres);
+		}
 	}
 }
