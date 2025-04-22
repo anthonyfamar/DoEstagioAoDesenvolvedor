@@ -20,7 +20,7 @@ namespace CalculadoraWeb1
 			}
 			set
 			{
-				ViewState["Nomes"] = value;				
+				ViewState["Nomes"] = value;
 			}
 		}
 
@@ -56,6 +56,9 @@ namespace CalculadoraWeb1
 
 			QuantidadeDeCliques += 1;
 			VisitasLabel.Text = QuantidadeDeCliques.ToString();
+
+			if (Nomes == null)
+				Nomes = new List<string>();
 		}
 
 		protected void Button1_Click(object sender, EventArgs e)
@@ -151,9 +154,13 @@ namespace CalculadoraWeb1
 
 		}
 
+		
+
 		protected void AdicionarNome_Click(object sender, EventArgs e)
 		{
+
 			Nomes.Add(TextBoxInformeNome.Text);
+			TextBoxInformeNome.Text = string.Empty;
 
 			MinhaLista.DataSource = Nomes;
 			MinhaLista.DataBind();
