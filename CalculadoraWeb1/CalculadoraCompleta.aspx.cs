@@ -121,8 +121,8 @@ namespace CalculadoraWeb1
 			}
 			else
 			{
-				var primeiro = long.Parse(PrimeiroNumero);
-				var atual = long.Parse(NumeroAtual);
+				var primeiro = decimal.Parse(PrimeiroNumero);
+				var atual = decimal.Parse(NumeroAtual);
 
 				var resultado = primeiro + atual;
 				PrimeiroNumero = resultado.ToString();
@@ -138,10 +138,50 @@ namespace CalculadoraWeb1
 			}
 			else
 			{
-				var primeiro = long.Parse((PrimeiroNumero));
-				var atual = long.Parse((NumeroAtual));
+				var primeiro = decimal.Parse(PrimeiroNumero);
+				var atual = decimal.Parse(NumeroAtual);
 
 				var resultado = primeiro - atual;
+				PrimeiroNumero = resultado.ToString();
+			}
+			NumeroAtual = "0";
+		}
+
+		protected void VirgulaButton_Click(object sender, EventArgs e)
+		{
+			if (NumeroAtual.Contains(","))
+				NumeroAtual = NumeroAtual + ",";
+		}
+
+		protected void OperecaoMultiplicacao_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(PrimeiroNumero))
+			{
+				PrimeiroNumero = NumeroAtual;
+			}
+			else
+			{
+				var primeiro = decimal.Parse(PrimeiroNumero);
+				var atual = decimal.Parse(NumeroAtual);
+
+				var resultado = primeiro * atual;
+				PrimeiroNumero = resultado.ToString();
+			}
+			NumeroAtual = "0";
+		}
+
+		protected void OperacaoDivisao_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(PrimeiroNumero))
+			{
+				PrimeiroNumero = NumeroAtual;
+			}
+			else
+			{
+				var primeiro = decimal.Parse(PrimeiroNumero);
+				var atual = decimal.Parse(NumeroAtual);
+
+				var resultado = primeiro / atual;
 				PrimeiroNumero = resultado.ToString();
 			}
 			NumeroAtual = "0";

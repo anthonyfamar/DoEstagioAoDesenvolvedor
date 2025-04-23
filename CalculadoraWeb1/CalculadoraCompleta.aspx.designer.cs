@@ -60,6 +60,15 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.Button Numero9Button;
 
 		/// <summary>
+		/// OperacaoDivisao control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button OperacaoDivisao;
+
+		/// <summary>
 		/// Numero4Button control.
 		/// </summary>
 		/// <remarks>
@@ -85,6 +94,15 @@ namespace CalculadoraWeb1
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button Numero6Button;
+
+		/// <summary>
+		/// OperecaoMultiplicacao control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button OperecaoMultiplicacao;
 
 		/// <summary>
 		/// Numero1Button control.
@@ -114,13 +132,13 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.Button Numero3Button;
 
 		/// <summary>
-		/// OperacaoSubtrairButton control.
+		/// OperacaoSubtrair control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button OperacaoSubtrairButton;
+		protected global::System.Web.UI.WebControls.Button OperacaoSubtrair;
 
 		/// <summary>
 		/// Numero0Button control.
@@ -132,12 +150,21 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.Button Numero0Button;
 
 		/// <summary>
-		/// OperacaoSomarButton control.
+		/// VirgulaButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button OperacaoSomarButton;
+		protected global::System.Web.UI.WebControls.Button VirgulaButton;
+
+		/// <summary>
+		/// OperacaoSomar control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button OperacaoSomar;
 	}
 }
