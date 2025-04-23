@@ -149,7 +149,7 @@ namespace CalculadoraWeb1
 
 		protected void VirgulaButton_Click(object sender, EventArgs e)
 		{
-			if (NumeroAtual.Contains(","))
+			if (!NumeroAtual.Contains(","))
 				NumeroAtual = NumeroAtual + ",";
 		}
 
