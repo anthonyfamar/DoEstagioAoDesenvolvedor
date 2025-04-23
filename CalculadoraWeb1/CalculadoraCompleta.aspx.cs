@@ -205,5 +205,17 @@ namespace CalculadoraWeb1
 			NumeroAtual = "0";
 
 		}
+
+		protected void SinalButton_Click(object sender, EventArgs e)
+		{
+			if (NumeroAtual.StartsWith("-"))
+			{
+				NumeroAtual = NumeroAtual.Substring(1);
+			}
+			else
+			{
+				NumeroAtual = "-" + NumeroAtual;
+			}
+		}
 	}
 }

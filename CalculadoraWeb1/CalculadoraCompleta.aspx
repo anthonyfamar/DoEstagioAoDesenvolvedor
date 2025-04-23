@@ -68,6 +68,7 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-2">
+			<asp:Button runat="server" ID="SinalButton" Text="+/-" CssClass="btn btn-primary btn-lg" OnClick="SinalButton_Click" />
 		</div>
 		<div class="col-2">
 			<asp:Button runat="server" ID="Numero0Button" Text="0" CssClass="btn btn-secondary btn-lg" OnClick="Numero0Button_Click"/>
