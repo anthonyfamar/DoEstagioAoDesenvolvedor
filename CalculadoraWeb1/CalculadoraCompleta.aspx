@@ -35,7 +35,7 @@
 			<asp:Button runat="server" ID="Numero9Button" Text="9" CssClass="btn btn-secondary btn-lg" OnClick="BtnAddNumero_Click" />
 		</div>
 		<div class ="col-2">
-			<asp:Button runat="server" ID="OperacaoDivisao" Text="/" CssClass="btn btn-primary btn-lg" OnClick="OperacaoDivisao_Click" />
+			<asp:Button runat="server" ID="OperacaoDivisao" Text="÷" CssClass="btn btn-primary btn-lg" OnClick="OperacaoDivisao_Click" />
 		</div>
 	</div>
 	<div class="row m-2">
