@@ -186,5 +186,12 @@ namespace CalculadoraWeb1
 			}
 			NumeroAtual = "0";
 		}
+
+		protected void LimparButton_Click(object sender, EventArgs e)
+		{
+			PrimeiroNumeroLabel.Text = string.Empty;
+			NumeroAtual = "0";
+
+		}
 	}
 }

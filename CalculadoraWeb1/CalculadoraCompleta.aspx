@@ -15,6 +15,17 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-2">
+		</div>
+		<div class="col-2">
+		</div>
+		<div class="col-2">
+			<asp:Button runat="server" ID="LimparButton" Text="CE" CssClass="btn btn-primary btn-lg" OnClick="LimparButton_Click"/>
+		</div>
+		<div class ="col-2">
+		</div>
+	</div>
+	<div class="row m-2">
+		<div class="col-2">
 			<asp:Button runat="server" ID="Numero7Button" Text="7" CssClass="btn btn-secondary btn-lg" OnClick="Numero7Button_Click" />
 		</div>
 		<div class="col-2">

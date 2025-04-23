@@ -33,6 +33,15 @@ namespace CalculadoraWeb1
 		protected global::System.Web.UI.WebControls.Label NumeroAtualLabel;
 
 		/// <summary>
+		/// LimparButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button LimparButton;
+
+		/// <summary>
 		/// Numero7Button control.
 		/// </summary>
 		/// <remarks>
