@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaDeGestaoDeEstudantes.Services;
 
 namespace SistemaDeGestaoDeEstudantes
 {
@@ -14,7 +15,7 @@ namespace SistemaDeGestaoDeEstudantes
 			do
 			{
 				Console.WriteLine("=".PadLeft(40, '='));
-				Console.WriteLine("Sistema de Gestão de Esudantes");
+				Console.WriteLine("Sistema de Gestão de Estudantes");
 				Console.WriteLine("=".PadRight(40, '='));
 				Console.WriteLine("1 - Estudante");
 				Console.WriteLine("2 - Disciplina");
@@ -26,8 +27,26 @@ namespace SistemaDeGestaoDeEstudantes
 				switch (opcao)
 				{
 					case "1":
-						Console.WriteLine("Você entrou na área de gerenciamento de estudantes, escolha a opção desejada: ");
+						Console.WriteLine("Você entrou na área de estudante: ");
+						Console.WriteLine("1 - Cadastrar estudante");
+						Console.WriteLine("2 - Visualizar lista de estudantes");
+						Console.WriteLine("3 - Excluir estudante");
+						Console.WriteLine("4 - Voltar ao menu anterior");
+						Console.WriteLine("Escolha a opção desejada: ");
+						var opcaoMenuEstudante = Console.ReadLine();
+
+						var estudanteService = new EstudanteService();
+	
+						if (opcaoMenuEstudante == "1")
+							Console.WriteLine("Digite o nome do estudante: ");
+							var nomeEstudante = Console.ReadLine();
+							Console.WriteLine("Digite a matricula do estudante: ");
+							var matriculaEstudante = int.Parse(Console.ReadLine());
+								
+							estudanteService.CadastrarAluno(nomeEstudante, matriculaEstudante);
+
 						break;
+
 				}
 			}
 			while (true);
