@@ -10,7 +10,7 @@ namespace SistemaDeGestaoDeEstudantes.Entities
 	{
 		public string Nome { get; set; }
 
-		public int Matricula { get; set; 
+		public int Matricula { get; set; }
 
 	}
 }
