@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using SistemaDeGestaoDeEstudantes.Entities;
@@ -16,12 +17,18 @@ namespace SistemaDeGestaoDeEstudantes.Services
 			Estudantes.Add(new Estudante() { Nome = nome, Matricula = matricula });
 		}
 
-		public List<Estudante> VisualizarAluno()
+		public void VisualizarAluno()
 		{
-			return Estudantes;
+			Console.WriteLine("Lista de alunos: ");
+
+			foreach (var estudante in Estudantes)
+			{
+				Console.WriteLine($"{estudante.Matricula} - {estudante.Nome}");
+			}
+
 		}
 
-		public bool RemoverAluno(string nome, int matricula)
+		public bool RemoverAluno(int matricula)
 		{
 			var estudante = Estudantes.FirstOrDefault(e => e.Matricula == matricula);
 
