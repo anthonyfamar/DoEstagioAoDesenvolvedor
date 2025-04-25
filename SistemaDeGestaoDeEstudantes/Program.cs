@@ -13,6 +13,7 @@ namespace SistemaDeGestaoDeEstudantes
 		static void Main(string[] args)
 		{
 			var estudanteService = new EstudanteService();
+			var disciplinaService = new DisciplinaService();
 
 			do
 			{
@@ -36,7 +37,7 @@ namespace SistemaDeGestaoDeEstudantes
 						break;
 
 					case "2":
-						AreaDaDisciplina();
+						AreaDaDisciplina(disciplinaService);
 						break;
 					case "3":
 						AreaDaTurma();
@@ -92,6 +93,7 @@ namespace SistemaDeGestaoDeEstudantes
 					Console.WriteLine("Aluno removido com sucesso!");
 					Thread.Sleep(500);
 					break;
+
 				case "4":
 					return;
 			}
@@ -99,9 +101,23 @@ namespace SistemaDeGestaoDeEstudantes
 
 		}
 
-		private static void AreaDaDisciplina()
+		private static void AreaDaDisciplina(DisciplinaService disciplinaService)
 		{
-			throw new NotImplementedException();
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.WriteLine("Você entrou na área de disciplinas: ");
+			Console.ResetColor();
+			Console.WriteLine("1 - Ver lista de disciplinas");
+			Console.WriteLine("2 - Cadastrar uma nova disciplina");
+			Console.WriteLine("3 - Voltar ao menu anterior");
+			Console.Write("Escolha a opção desejada: ");
+			var opcaoMenuDisciplina = Console.ReadLine();
+
+			switch (opcaoMenuDisciplina)
+			{
+				case "1":
+					disciplinaService.DefinirDisciplinasPadrao();
+					break;
+			}
 		}
 
 		private static void AreaDaTurma()

@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Disciplina.cs" />
     <Compile Include="Entities\Estudante.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DisciplinaService.cs" />
     <Compile Include="Services\EstudanteService.cs" />
   </ItemGroup>
   <ItemGroup>
