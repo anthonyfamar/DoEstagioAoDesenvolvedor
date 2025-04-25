@@ -87,8 +87,13 @@ namespace SistemaDeGestaoDeEstudantes
 					matriculaEstudante = int.Parse(Console.ReadLine());
 
 					estudanteService.RemoverAluno(matriculaEstudante);
+					Console.WriteLine("Removendo...");
+					Thread.Sleep(1000);
 					Console.WriteLine("Aluno removido com sucesso!");
+					Thread.Sleep(500);
 					break;
+				case "4":
+					return;
 			}
 
 

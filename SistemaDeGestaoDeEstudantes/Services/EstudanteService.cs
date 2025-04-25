@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using SistemaDeGestaoDeEstudantes.Entities;
 
@@ -24,6 +25,7 @@ namespace SistemaDeGestaoDeEstudantes.Services
 			foreach (var estudante in Estudantes)
 			{
 				Console.WriteLine($"{estudante.Matricula} - {estudante.Nome}");
+				Thread.Sleep(500);
 			}
 
 		}
