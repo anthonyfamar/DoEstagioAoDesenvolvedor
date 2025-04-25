@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using SistemaDeGestaoDeEstudantes.Services;
 
@@ -11,7 +12,6 @@ namespace SistemaDeGestaoDeEstudantes
 	{
 		static void Main(string[] args)
 		{
-
 			do
 			{
 				Console.WriteLine("=".PadLeft(40, '='));
@@ -27,29 +27,59 @@ namespace SistemaDeGestaoDeEstudantes
 				switch (opcao)
 				{
 					case "1":
-						Console.WriteLine("Você entrou na área de estudante: ");
-						Console.WriteLine("1 - Cadastrar estudante");
-						Console.WriteLine("2 - Visualizar lista de estudantes");
-						Console.WriteLine("3 - Excluir estudante");
-						Console.WriteLine("4 - Voltar ao menu anterior");
-						Console.WriteLine("Escolha a opção desejada: ");
-						var opcaoMenuEstudante = Console.ReadLine();
-
-						var estudanteService = new EstudanteService();
-	
-						if (opcaoMenuEstudante == "1")
-							Console.WriteLine("Digite o nome do estudante: ");
-							var nomeEstudante = Console.ReadLine();
-							Console.WriteLine("Digite a matricula do estudante: ");
-							var matriculaEstudante = int.Parse(Console.ReadLine());
-								
-							estudanteService.CadastrarAluno(nomeEstudante, matriculaEstudante);
-
+						AreaDoEstudante();
 						break;
 
+					case "2":
+						AreaDaDisciplina();
+						break;
+					case "3":
+						AreaDaTurma();
+						break;
+					default:
+						Console.WriteLine("Programa finalizado.");
+						return;
 				}
 			}
 			while (true);
+		}
+
+		public static void AreaDoEstudante()
+		{
+			Console.WriteLine("Você entrou na área de estudante: ");
+			Console.WriteLine("1 - Cadastrar estudante");
+			Console.WriteLine("2 - Visualizar lista de estudantes");
+			Console.WriteLine("3 - Excluir estudante");
+			Console.WriteLine("4 - Voltar ao menu anterior");
+			Console.WriteLine("Escolha a opção desejada: ");
+			var opcaoMenuEstudante = Console.ReadLine();
+
+			var estudanteService = new EstudanteService();
+
+			if (opcaoMenuEstudante == "1")
+				Console.WriteLine("Digite o nome do estudante: ");
+			var nomeEstudante = Console.ReadLine();
+			Console.WriteLine("Digite a matricula do estudante: ");
+			var matriculaEstudante = int.Parse(Console.ReadLine());
+
+			estudanteService.CadastrarAluno(nomeEstudante, matriculaEstudante);
+
+			Console.WriteLine($"Nome: {nomeEstudante}");
+			Console.WriteLine($"Matricula: {matriculaEstudante}");
+			Thread.Sleep(300);
+			Console.WriteLine("Estudante cadastrado com sucesso!");
+			Thread.Sleep(500);
+
+		}
+
+		private static void AreaDaDisciplina()
+		{
+			throw new NotImplementedException();
+		}
+
+		private static void AreaDaTurma()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
