@@ -3,3 +3,91 @@
 	bottom: 0;
 	width: 100%;
 }
+
+.div {
+	width: 70%;
+	margin: auto;
+	border: 1px groove #191970;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header {
+	background-color: #191970;
+	text-align: left;
+	padding: 20px;
+	color: white;
+}
+
+section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.article {
+	float: right;
+	padding: 20px;
+	width: 70%;
+}
+
+.banconavbar {
+	float: left;
+	padding: 10px;
+}
+
+.lisemoponto {
+	list-style-type: none;
+	padding: 0;
+}
+
+.ulalinhadoesquerda {
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+.buttonNavLateral {
+	background-color: white;
+	color: #191970;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+	.buttonNavLateral:hover {
+		background-color: #191970;
+		color: white;
+	}
+
+.tableInfo {
+	display:flex;
+	border: 1px solid #a0a0a0;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.buttonForaNav {
+	background-color: white;
+	color: #191970;
+	padding: 8px 30px;
+	border-radius: 12px;
+}
+
+	.buttonForaNav:hover {
+		background-color: #191970;
+		color: white;
+	}
+
+.button-container {
+	display: flex;
+	gap: 50px;
+	padding:15px;
+}
+
+.tableDivPrincipal {
+	display: flex;
+	border: 1px groove #a0a0a0;
+	width: 560px;
+	height: 200px;
+	border-radius: 5px;
+	padding: 20px;
+}
