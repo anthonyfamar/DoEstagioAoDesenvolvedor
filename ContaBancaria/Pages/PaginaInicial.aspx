@@ -13,7 +13,7 @@
                 <nav class="banconavbar">
                     <ul class="ulalinhadoesquerda">
                         <li class="buttonNavLateral buttonNavLateral; lisemoponto"><h5>Página inicial</h5></li>
-                        <li class="buttonNavLateral buttonNavLateral; lisemoponto"><h5>Depositar</h5></li>
+                        <asp:Button runat="server" ID="BtnDepositar" text="Depositar" CssClass="buttonNavLateral buttonNavLateral; lisemoponto" OnClick="BtnDepositar_Click" />
                         <li class="buttonNavLateral buttonNavLateral; lisemoponto"><h5>Sacar</h5></li>
                         <li class="buttonNavLateral buttonNavLateral; lisemoponto"><h5>Transferir</h5></li>
                     </ul>
