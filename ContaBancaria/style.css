@@ -109,3 +109,28 @@ section::after {
 		background-color: #191970;
 		color: white;
 	}
+
+
+.btn-midnightblueComBorder {
+	background-color: white;
+	color: #191970;
+	padding: 10px;
+	margin-left: 15px;
+	list-style-type: none;
+	cursor: pointer;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	unicode-bidi: isolate;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	border-radius: 4;
+	border:solid 1px;
+}
+
+	.btn-midnightblueComBorder:hover {
+		background-color: #191970;
+		color: white;
+	}

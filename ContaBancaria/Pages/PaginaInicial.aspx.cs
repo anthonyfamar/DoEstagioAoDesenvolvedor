@@ -21,7 +21,7 @@ namespace ContaBancaria
 
 		protected void BtnSaque_Click(object sender, EventArgs e)
 		{
-
+			Response.Redirect("~/Pages/Saque.aspx");
 		}
 
 		protected void BtnTransferir_Click(object sender, EventArgs e)

@@ -28,6 +28,12 @@
 						<asp:TextBox runat="server" ID="txtValor" class="form-control" placeholder="R$ 0,00" ></asp:TextBox>
 					</div>
 				</div>
+
 		</div>
+
+		<div class="d-flex justify-content-center align-items-center pt-4">
+			<asp:Button runat="server" ID="btnConfirmaDeposito" class="btn btn-midnightblueComBorder " text="Confirmar" OnClick="btnConfirmaDeposito_Click"/>
+		</div>
+
     </main>
 </asp:Content>
