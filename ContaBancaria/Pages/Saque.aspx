@@ -19,7 +19,7 @@
 					</div>
 
 					<div class="mb-3">
-						<label for="txtValor">Valor do saque:</label>
+						<label for="txtValor">Valor:</label>
 						<asp:TextBox runat="server" ID="txtValor" class="form-control" placeholder="R$ 0,00" ></asp:TextBox>
 					</div>
 				</div>

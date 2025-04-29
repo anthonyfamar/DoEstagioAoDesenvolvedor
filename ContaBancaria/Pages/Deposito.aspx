@@ -32,7 +32,7 @@
 		</div>
 
 		<div class="d-flex justify-content-center align-items-center pt-4">
-			<asp:Button runat="server" ID="btnConfirmaDeposito" class="btn btn-midnightblueComBorder " text="Confirmar" OnClick="btnConfirmaDeposito_Click"/>
+			<asp:Button runat="server" ID="btnConfirmaDeposito" class="btn btn-midnightblueComBorder" text="Confirmar" OnClick="btnConfirmaDeposito_Click"/>
 		</div>
 
     </main>

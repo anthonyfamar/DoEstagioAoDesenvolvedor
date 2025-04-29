@@ -26,7 +26,7 @@ namespace ContaBancaria
 
 		protected void BtnTransferir_Click(object sender, EventArgs e)
 		{
-
+			Response.Redirect("~/Pages/Transferir.aspx");
 		}
 
 		protected void BtnPaginaInicial_Click(object sender, EventArgs e)
