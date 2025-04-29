@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<main aria-labelledby="title">
-		<div class="div">
+		<div class="divPaginaInicial">
 
 		    <header">
                 <h3 class="header">Sistema bancário</h3>
