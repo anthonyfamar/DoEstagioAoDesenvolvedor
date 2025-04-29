@@ -18,5 +18,20 @@ namespace ContaBancaria
 		{
 			Response.Redirect("~/Pages/Deposito.aspx");
 		}
+
+		protected void BtnSaque_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void BtnTransferir_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void BtnPaginaInicial_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

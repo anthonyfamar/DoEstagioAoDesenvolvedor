@@ -15,6 +15,15 @@ namespace ContaBancaria
 	{
 
 		/// <summary>
+		/// BtnPaginaInicial control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnPaginaInicial;
+
+		/// <summary>
 		/// BtnDepositar control.
 		/// </summary>
 		/// <remarks>
@@ -22,5 +31,23 @@ namespace ContaBancaria
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button BtnDepositar;
+
+		/// <summary>
+		/// BtnSaque control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnSaque;
+
+		/// <summary>
+		/// BtnTransferir control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnTransferir;
 	}
 }

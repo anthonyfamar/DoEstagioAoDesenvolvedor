@@ -43,23 +43,11 @@ section::after {
 .ulalinhadoesquerda {
 	padding: 0;
 	margin: 0;
-	text-align: left;
+	text-align:center
 }
-
-.buttonNavLateral {
-	background-color: white;
-	color: #191970;
-	padding: 10px;
-	margin-left: 10px;
-}
-
-	.buttonNavLateral:hover {
-		background-color: #191970;
-		color: white;
-	}
 
 .tableInfo {
-	display:flex;
+	display: flex;
 	border: 1px solid #a0a0a0;
 	border-radius: 5px;
 	padding: 20px;
@@ -80,7 +68,7 @@ section::after {
 .button-container {
 	display: flex;
 	gap: 50px;
-	padding:15px;
+	padding: 15px;
 }
 
 .tableDivPrincipal {
@@ -91,3 +79,27 @@ section::after {
 	border-radius: 5px;
 	padding: 20px;
 }
+
+.btn-midnightblueNavLateral {
+	background-color: white;
+	color: #191970;
+	padding: 10px;
+	margin-left: 15px;
+	list-style-type: none;
+	cursor: pointer;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	unicode-bidi: isolate;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	border-radius:0;
+}
+
+	.btn-midnightblueNavLateral:hover {
+		background-color: #191970;
+		color: white;
+	}
+
