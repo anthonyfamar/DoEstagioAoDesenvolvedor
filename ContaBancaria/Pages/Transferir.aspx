@@ -4,7 +4,7 @@
 	<main aria-labelledby="title">
 		<div class="divCadastro">
 				<header">
-					<h3 class="header">Sistema bancário -  Saque</h3>
+					<h3 class="header">Sistema bancário -  Transferência</h3>
 				</header>
 
 				<div class="card pt-2 pb-3 border-0" style="padding-left:80px">

@@ -6,7 +6,7 @@
 		<div class="divPaginaInicial">
 
 		    <header">
-                <h3 class="header">Sistema bancário</h3>
+                <h3 class="header">Sistema bancário - Página Inicial</h3>
             </header>
 
             <section>
