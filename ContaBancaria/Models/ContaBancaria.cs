@@ -15,5 +15,7 @@ namespace ContaBancaria.Models
 
 		public decimal Valor {  get; set; }
 
+		public decimal SaldoAtual {get; set; }
+
 	}
 }

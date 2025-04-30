@@ -29,7 +29,7 @@
                                 Titular: <asp:Label runat="server" ID="TitularDaConta" class="h4" Text="oi"></asp:Label>
                             </div>
                             <div class="h4">
-                                Saldo Atual: R$ <asp:Label runat="server" ID="SaldoAtual" Text="0"></asp:Label>
+                                Saldo Atual: R$ <asp:Label runat="server" ID="SaldoAtual"></asp:Label>
                             </div>
                         </div>
                     </div>

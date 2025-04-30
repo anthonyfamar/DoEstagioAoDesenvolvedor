@@ -16,7 +16,13 @@ namespace ContaBancaria
 
 		protected void btnConfirmaDeposito_Click(object sender, EventArgs e)
 		{
+			decimal valorDeposito = decimal.Parse(txtValor.Text);
+			decimal saldoAtual = (decimal)(Session["Saldo"] ?? 0M);
 
+			saldoAtual += valorDeposito;
+
+			Session["Saldo"] = saldoAtual;
+			Response.Redirect("PaginaInicial.aspx");
 		}
 	}
 }
