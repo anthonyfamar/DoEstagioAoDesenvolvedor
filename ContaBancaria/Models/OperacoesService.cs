@@ -7,9 +7,9 @@ namespace ContaBancaria.Models
 {
 	public class OperacoesService
 	{
-		public void Depositar(int agencia, int contaDeposito, string cpf, decimal valor)
+		public void Depositar(int agencia, int contaDeposito, string cpf, decimal valor, decimal saldoAtual)
 		{
-
+			
 		}
 
 		public void Sacar(int agencia, string cpf, decimal valor)
