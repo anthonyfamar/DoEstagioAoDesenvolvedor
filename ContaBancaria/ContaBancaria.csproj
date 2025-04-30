@@ -186,7 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\ContaBancaria.cs" />
+    <Compile Include="Models\OperacoesService.cs" />
     <Compile Include="Pages\Saque.aspx.cs">
       <DependentUpon>Saque.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ContaBancaria.Models
 {
-	public abstract class ContaBancaria
+	public class ContaBancaria
 	{
 		public int NumConta { get; set; }
 

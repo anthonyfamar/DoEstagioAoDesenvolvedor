@@ -21,11 +21,17 @@
 
                 <article class="article">
                     <div class="tableInfo">
-                        <ul class="ulalinhadoesquerda">
-                            <li class="lisemoponto"><h4>Conta Nº: 111111</h4></li>
-                            <li class="lisemoponto"><h4>Titular: João João</h4></li>
-                            <li class="lisemoponto"><h4>Saldo: R$ 158798,00</h4></li>
-                        </ul>
+                        <div class="row">
+                            <div class="h4">
+                                Conta Nº: <asp:Label runat="server" ID="NumeroDaConta" class="h4"></asp:Label>
+                            </div>
+                            <div class="h4">
+                                Titular: <asp:Label runat="server" ID="TitularDaConta" class="h4" Text="oi"></asp:Label>
+                            </div>
+                            <div class="h4">
+                                Saldo Atual: R$ <asp:Label runat="server" ID="SaldoAtual" Text="0"></asp:Label>
+                            </div>
+                        </div>
                     </div>
                     </br>
                     <div class="button-container">
