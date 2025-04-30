@@ -14,9 +14,22 @@ namespace ContaBancaria
 
 		}
 
-        protected void btnConfirmaSaque_Click(object sender, EventArgs e)
-        {
+		protected void btnConfirmaSaque_Click(object sender, EventArgs e)
+		{
+			decimal valorSaque = decimal.Parse(txtValor.Text);
+			decimal saldoAtual = (decimal)(Session["Saldo"] ?? 0M);
 
-        }
-    }
+			if (valorSaque <= saldoAtual)
+			{
+				saldoAtual -= valorSaque;
+				Session["Saldo"] = saldoAtual;
+				Response.Redirect("PaginaInicial.aspx");
+			}
+			else
+			{
+				lblErro.Text = "Saldo Insuficiente!";
+				lblErro.CssClass = "text-danger";
+			}
+		}
+	}
 }

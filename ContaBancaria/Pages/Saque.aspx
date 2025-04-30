@@ -23,6 +23,9 @@
 						<asp:TextBox runat="server" ID="txtValor" class="form-control" placeholder="R$ 0,00" ></asp:TextBox>
 					</div>
 				</div>
+				<div class="text-center mb-3">
+					<asp:Label runat="server" ID="lblErro"></asp:Label>
+				</div>
 		</div>
 
 		<div class="d-flex justify-content-center align-items-center pt-4">
