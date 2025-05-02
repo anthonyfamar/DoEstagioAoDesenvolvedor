@@ -11,17 +11,35 @@ namespace ContaBancaria.Pages
 {
 
 
-	public partial class Login
+	public partial class CadastroUsuario
 	{
 
 		/// <summary>
-		/// txtConta control.
+		/// txtNomeCompleto control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtConta;
+		protected global::System.Web.UI.WebControls.TextBox txtNomeCompleto;
+
+		/// <summary>
+		/// txtAgencia control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtAgencia;
+
+		/// <summary>
+		/// NumeroConta control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox NumeroConta;
 
 		/// <summary>
 		/// txtSenha control.
@@ -33,12 +51,12 @@ namespace ContaBancaria.Pages
 		protected global::System.Web.UI.WebControls.TextBox txtSenha;
 
 		/// <summary>
-		/// btnLogin control.
+		/// BtnCadastrar control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnLogin;
+		protected global::System.Web.UI.WebControls.Button BtnCadastrar;
 	}
 }

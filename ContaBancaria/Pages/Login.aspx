@@ -7,18 +7,13 @@
                 <h3 class="text-center mb-4" style="color: #191970;">Login Bancário</h3>
 
                 <div class="mb-3" style="margin-left: 35px">
-                    <label for="txtConta" class="form-label">Número da Conta</label>
+                    <label for="txtConta" class="form-label">Nº da Conta</label>
                     <asp:TextBox runat="server" ID="txtConta" class="form-control" placeholder="Ex: 123456"></asp:TextBox>
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="txtSenha" class="form-label">Senha</label>
                     <asp:TextBox runat="server" ID="txtSenha" TextMode="Password" class="form-control" placeholder="Senha"></asp:TextBox>
-                </div>
-
-                <div class="form-check mb-3">
-                    <asp:CheckBox runat="server" ID="chkManterConectado" />
-                    <label class="form-check-label" for="chkManterConectado">Manter conectado</label>
                 </div>
 
                 <asp:Button runat="server" ID="btnLogin" Text="Entrar" class="btn w-100 text-white" style="background-color: #191970; margin-left: 35px" OnClick="btnLogin_Click" />
