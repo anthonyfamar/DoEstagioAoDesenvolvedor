@@ -23,10 +23,10 @@
                     <div class="tableInfo">
                         <div class="row">
                             <div class="h4">
-                                Conta Nº: <asp:Label runat="server" ID="NumeroDaConta" class="h4"></asp:Label>
+                                Titular: <asp:Label runat="server" ID="TitularDaConta" class="h4" Text="oi"></asp:Label>
                             </div>
                             <div class="h4">
-                                Titular: <asp:Label runat="server" ID="TitularDaConta" class="h4" Text="oi"></asp:Label>
+                                Conta Nº: <asp:Label runat="server" ID="NumeroDaConta" class="h4" Text="55487"></asp:Label>
                             </div>
                             <div class="h4">
                                 Saldo Atual: R$ <asp:Label runat="server" ID="SaldoAtual"></asp:Label>
@@ -35,8 +35,8 @@
                     </div>
                     </br>
                     <div class="button-container">
-                        <button class="buttonForaNav buttonForaNav">Mostrar Nº conta</button>
-                        <button class="buttonForaNav buttonForaNav">Consultar Saldo</button>
+                        <asp:Button runat="server" ID="BtnMostrarConta" Text="Mostrar Nº Conta" CssClass="buttonForaNav buttonForaNav" OnClick="BtnMostrarConta_Click" />
+                        <asp:Button runat="server" ID="BtnMostrarSaldo" Text="Mostrar Saldo" CssClass="buttonForaNav buttonForaNav" OnClick="BtnMostrarSaldo_Click" />
                         <button class="buttonForaNav buttonForaNav">Pix</button>
                     </div>
                 </article>

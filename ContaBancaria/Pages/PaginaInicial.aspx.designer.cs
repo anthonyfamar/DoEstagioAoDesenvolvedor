@@ -51,15 +51,6 @@ namespace ContaBancaria
 		protected global::System.Web.UI.WebControls.Button BtnTransferir;
 
 		/// <summary>
-		/// NumeroDaConta control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label NumeroDaConta;
-
-		/// <summary>
 		/// TitularDaConta control.
 		/// </summary>
 		/// <remarks>
@@ -69,6 +60,15 @@ namespace ContaBancaria
 		protected global::System.Web.UI.WebControls.Label TitularDaConta;
 
 		/// <summary>
+		/// NumeroDaConta control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label NumeroDaConta;
+
+		/// <summary>
 		/// SaldoAtual control.
 		/// </summary>
 		/// <remarks>
@@ -76,5 +76,23 @@ namespace ContaBancaria
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Label SaldoAtual;
+
+		/// <summary>
+		/// BtnMostrarConta control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnMostrarConta;
+
+		/// <summary>
+		/// BtnMostrarSaldo control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnMostrarSaldo;
 	}
 }
