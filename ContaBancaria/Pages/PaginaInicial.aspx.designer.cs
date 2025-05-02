@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ContaBancaria
+namespace ContaBancaria.Pages
 {
 
 
-	public partial class _Default
+	public partial class PaginaInicial
 	{
 
 		/// <summary>

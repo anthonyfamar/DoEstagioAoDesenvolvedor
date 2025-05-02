@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transferir.aspx.cs" Inherits="ContaBancaria.Pages.Transferir" %>
-
+﻿<%@ Page Title="Transferência" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transferir.aspx.cs" Inherits="ContaBancaria.Pages.Transferir" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<main aria-labelledby="title">
 		<div class="divCadastro">

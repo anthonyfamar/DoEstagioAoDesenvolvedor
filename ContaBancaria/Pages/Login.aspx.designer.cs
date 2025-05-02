@@ -11,52 +11,43 @@ namespace ContaBancaria.Pages
 {
 
 
-	public partial class Deposito
+	public partial class Login
 	{
 
 		/// <summary>
-		/// txtAgencia control.
+		/// txtConta control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtAgencia;
+		protected global::System.Web.UI.WebControls.TextBox txtConta;
 
 		/// <summary>
-		/// txtContaDeposito control.
+		/// txtSenha control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtContaDeposito;
+		protected global::System.Web.UI.WebControls.TextBox txtSenha;
 
 		/// <summary>
-		/// txtCPF control.
+		/// chkManterConectado control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtCPF;
+		protected global::System.Web.UI.WebControls.CheckBox chkManterConectado;
 
 		/// <summary>
-		/// txtValor control.
+		/// btnLogin control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtValor;
-
-		/// <summary>
-		/// btnConfirmaDeposito control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnConfirmaDeposito;
+		protected global::System.Web.UI.WebControls.Button btnLogin;
 	}
 }

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ContaBancaria
+namespace ContaBancaria.Pages
 {
-	public partial class Contact : Page
+	public partial class Deposito : Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{

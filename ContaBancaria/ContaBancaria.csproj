@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Saque.aspx" />
     <Content Include="Pages\Deposito.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -188,6 +189,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Models\ContaBancaria.cs" />
     <Compile Include="Models\OperacoesService.cs" />
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Saque.aspx.cs">
       <DependentUpon>Saque.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

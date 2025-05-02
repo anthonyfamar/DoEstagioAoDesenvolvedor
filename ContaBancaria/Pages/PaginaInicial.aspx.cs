@@ -6,9 +6,9 @@ using System.Web.DynamicData;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ContaBancaria
+namespace ContaBancaria.Pages
 {
-	public partial class _Default : Page
+	public partial class PaginaInicial : Page
 	{
 
 		protected void Page_Load(object sender, EventArgs e)

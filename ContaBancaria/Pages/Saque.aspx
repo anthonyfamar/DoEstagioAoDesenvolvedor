@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Saque.aspx.cs" Inherits="ContaBancaria.About" %>
+﻿<%@ Page Title="Saque" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Saque.aspx.cs" Inherits="ContaBancaria.Pages.Saque" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<main aria-labelledby="title">
