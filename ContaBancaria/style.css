@@ -135,6 +135,6 @@ section::after {
 		color: white;
 	}
 
-.backgroudColor {
-	background-color: #191970;
+.espacamentoTop {
+	margin-top: 80px;
 }
