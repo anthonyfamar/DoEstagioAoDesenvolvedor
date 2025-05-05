@@ -12,13 +12,23 @@
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
+                    <label for="txtCpf" class="form-label">CPF</label>
+                    <asp:TextBox runat="server" ID="txtCpf" class="form-control"></asp:TextBox>
+                </div>
+
+                <div class="mb-3" style="margin-left: 35px">
+                    <label for="txtTelefone" class="form-label">Telefone</label>
+                    <asp:TextBox runat="server" ID="txtTelefone" class="form-control"></asp:TextBox>
+                </div>
+
+                <div class="mb-3" style="margin-left: 35px">
                     <label for="txtAgencia" class="form-label">Agência</label>
                     <asp:TextBox runat="server" ID="txtAgencia" class="form-control" text="8968"></asp:TextBox>
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
-                    <label for="NumeroConta" class="form-label">Nº da Conta</label>
-                    <asp:TextBox runat="server" ID="NumeroConta" class="form-control"></asp:TextBox>
+                    <label for="txtNumeroConta" class="form-label">Nº da Conta</label>
+                    <asp:TextBox runat="server" ID="txtNumeroConta" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
@@ -26,7 +36,7 @@
                     <asp:TextBox runat="server" ID="txtSenha" TextMode="Password" class="form-control" placeholder="Senha"></asp:TextBox>
                 </div>
 
-                <asp:Button runat="server" ID="BtnCadastrar" Text="Confirmar" class="btn text-white" style="background-color: #191970; width:50%; margin-left: 100px; margin-top: 30px;" OnClick="BtnCadastrar_Click" />
+                <asp:Button runat="server" ID="BtnCadastrar" Text="Confirmar" class="btn text-white" style="background-color: #191970; width:50%; margin-left: 100px; margin-top: 10px;" OnClick="BtnCadastrar_Click" />
 
             </div>
         </div>
