@@ -27,3 +27,5 @@
 /ContaBancaria/bin
 /ContaBancaria/obj/Debug
 /ContaBancaria/.vs/ContaBancaria
+/ContaBancaria/Web.config
+/.gitignore
