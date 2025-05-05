@@ -11,16 +11,18 @@ namespace ContaBancaria.Pages
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//if (!IsPostBack)
-			//{
-			//	string numeroConta =
-			//}
+			if (!IsPostBack)
+			{
+				string numeroConta = GerarNumeroContaUnico();
+				txtNumeroConta.Text = numeroConta;
+			}
 		}
 
-		//private string GerarNumeroContaUnico
-		//{
-		//	var rand = new Random
-		//}
+		private string GerarNumeroContaUnico()
+		{
+			var rand = new Random();
+			return rand.Next(100000, 999999).ToString();
+		}
 
 		protected void BtnCadastrar_Click(object sender, EventArgs e)
 		{

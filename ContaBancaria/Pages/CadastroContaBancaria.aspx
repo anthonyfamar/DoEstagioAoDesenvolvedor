@@ -23,12 +23,12 @@
 
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="txtAgencia" class="form-label">Agência</label>
-                    <asp:TextBox runat="server" ID="txtAgencia" class="form-control" text="8968"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgencia" ReadOnly="true" class="form-control" style="border:none" text="8968"></asp:TextBox>
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="txtNumeroConta" class="form-label">Nº da Conta</label>
-                    <asp:TextBox runat="server" ID="txtNumeroConta" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtNumeroConta" ReadOnly="true" class="form-control" style="border:none"></asp:TextBox>
                 </div>
 
                 <div class="mb-3" style="margin-left: 35px">
