@@ -99,7 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\CadastroUsuario.aspx" />
+    <Content Include="Pages\CadastroContaBancaria.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Saque.aspx" />
     <Content Include="Pages\Deposito.aspx" />
@@ -188,14 +188,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="DAOs\CadastroContaBancariaDao.cs" />
     <Compile Include="Models\ContaBancaria.cs" />
     <Compile Include="Models\OperacoesService.cs" />
-    <Compile Include="Pages\CadastroUsuario.aspx.cs">
-      <DependentUpon>CadastroUsuario.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroContaBancaria.aspx.cs">
+      <DependentUpon>CadastroContaBancaria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\CadastroUsuario.aspx.designer.cs">
-      <DependentUpon>CadastroUsuario.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroContaBancaria.aspx.designer.cs">
+      <DependentUpon>CadastroContaBancaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

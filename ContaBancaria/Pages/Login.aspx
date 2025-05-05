@@ -19,7 +19,7 @@
                 <asp:Button runat="server" ID="btnLogin" Text="Entrar" class="btn w-100 text-white" style="background-color: #191970; margin-left: 35px" OnClick="btnLogin_Click" />
 
                 <div class="text-center mt-3">
-                    <a href="CadastroUsuario.aspx" style="color: #191970;">Criar novo usuário</a>
+                    <a href="CadastroContaBancaria.aspx" style="color: #191970;">Cadastrar nova conta</a>
                 </div>
             </div>
         </div>

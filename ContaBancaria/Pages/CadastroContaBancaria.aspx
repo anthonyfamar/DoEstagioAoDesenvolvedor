@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Cadastro de usuário" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroUsuario.aspx.cs" Inherits="ContaBancaria.Pages.CadastroUsuario" %>
+﻿<%@ Page Title="Cadastro de Conta Bancária" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroContaBancaria.aspx.cs" Inherits="ContaBancaria.Pages.CadastroUsuario" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main>
+	<main>
         <div class="d-flex justify-content-center align-items-center">
             <div class="card p-4 shadow" style="width: 100%; max-width: 400px; border: 1px solid #191970; left: -9px; top: -69px; margin-top: 0px;">
-                <h3 class="text-center mb-4" style="color: #191970;">Cadastro de usuário</h3>
+                <h4 class="text-center mb-4" style="color: #191970;">Cadastro de Conta Bancária</h4>
 
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="txtConta" class="form-label">Nome Completo</label>
