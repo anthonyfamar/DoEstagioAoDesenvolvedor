@@ -26,7 +26,7 @@
                     <asp:TextBox runat="server" ID="txtSenha" TextMode="Password" class="form-control" placeholder="Senha"></asp:TextBox>
                 </div>
 
-                <asp:Button runat="server" ID="BtnCadastrar" Text="Confirmar" class="btn w-100 text-white" style="background-color: #191970; margin-left: 35px" OnClick="BtnCadastrar_Click" />
+                <asp:Button runat="server" ID="BtnCadastrar" Text="Confirmar" class="btn text-white" style="background-color: #191970; width:50%; margin-left: 100px; margin-top: 30px;" OnClick="BtnCadastrar_Click" />
 
             </div>
         </div>

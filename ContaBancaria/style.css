@@ -127,7 +127,7 @@ section::after {
 	font-weight: 500;
 	line-height: 1.2;
 	border-radius: 4;
-	border:solid 1px;
+	border: solid 1px;
 }
 
 	.btn-midnightblueComBorder:hover {

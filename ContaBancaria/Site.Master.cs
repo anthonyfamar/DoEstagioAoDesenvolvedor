@@ -13,5 +13,10 @@ namespace ContaBancaria
 		{
 
 		}
+
+		protected void BtnSair_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("~/Pages/Login.aspx");
+		}
 	}
 }
