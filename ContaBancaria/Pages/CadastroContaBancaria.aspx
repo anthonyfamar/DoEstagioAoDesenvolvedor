@@ -6,6 +6,8 @@
             <div class="card p-4 shadow" style="width: 100%; max-width: 400px; border: 1px solid #191970; left: -9px; top: -69px; margin-top: 0px;">
                 <h4 class="text-center mb-4" style="color: #191970;">Cadastro de Conta Bancária</h4>
 
+                <asp:Label ID="lblMensagem" runat="server" style="text-align:center" />
+
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="txtNumeroConta" class="form-label">Nº da Conta</label>
                     <asp:TextBox runat="server" ID="txtNumeroConta" ReadOnly="true" class="form-control" style="border:none"></asp:TextBox>
@@ -46,9 +48,7 @@
                 <div class="d-flex justify-content-center gap-3 mt-3">
                     <asp:Button runat="server" ID="BtnCadastrar" Text="Confirmar" class="btn text-white" style="background-color: #191970; width: 40%;" OnClick="BtnCadastrar_Click" />
                     <a href="Login.aspx" class="btn btn-outline-secondary">Voltar</a>
-                    <asp:Label ID="lblMensagem" runat="server" ForeColor="Green" />
                 </div>
-
             </div>
         </div>
     </main>

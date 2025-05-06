@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ContaBancaria.DAOs;
 
 namespace ContaBancaria.Pages
 {
@@ -26,6 +27,11 @@ namespace ContaBancaria.Pages
 
 		protected void BtnCadastrar_Click(object sender, EventArgs e)
 		{
+			CadastroUsuarioDao dao = new CadastroUsuarioDao();
+			string mensagem;
+
+			dao.InserirUsuario(txtNomeCompleto.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, out mensagem);
+			lblMensagem.Text = mensagem;
 
 		}
 	}

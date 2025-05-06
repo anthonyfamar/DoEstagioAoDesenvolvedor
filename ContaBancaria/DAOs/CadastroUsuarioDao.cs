@@ -35,18 +35,18 @@ namespace ContaBancaria.DAOs
 					conn.Open();
 					cmd.ExecuteNonQuery();
 
-					mensagem = "Usuário cadastrado com sucesso!";
+					mensagem = "<div class='alert alert-success'>Usuário cadastrado com sucesso!</div>";
 				}
 			}
 			catch (SqlException ex)
 			{
 				if (ex.Number == 2627 || ex.Number == 2601)
 				{
-					mensagem = "Erro: CPF já cadastrado.";
+					mensagem = "<div class='alert alert-danger'>Erro: CPF já cadastrado.</div>";
 				}
 				else
 				{
-					mensagem = "Erro: " + ex.Message;
+					mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
 				}
 			}
 		}
