@@ -4,20 +4,51 @@ using System.Linq;
 using System.Web;
 using System.Data.Sql;
 using System.Configuration;
+using System.Data.SqlClient;
 namespace ContaBancaria.DAOs
 {
 	public class CadastroUsuarioDao //Classe que conversa com o banco de dados
 	{
 		private readonly string _conexao;
 
-		public CadastroUsuarioDao(string conexao)
+		public CadastroUsuarioDao()
 		{
-			_conexao = conexao;
+			_conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
 		}
 
-		public void CadastrarUsuario()
+		public void InserirUsuario(string nome, string cpf, string telefone, string senha, out string mensagem)
 		{
-			
+			mensagem = "";
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_conexao))
+				{
+					string sql = "INSERT INTO Usuario(Nome, Cpf, Telefone, Senha) VALUES (@Nome, @Cpf, @Telefone, @Senha)";
+					SqlCommand cmd = new SqlCommand(sql, conn);
+
+					cmd.Parameters.AddWithValue("@Nome", nome);
+					cmd.Parameters.AddWithValue("@Cpf", cpf);
+					cmd.Parameters.AddWithValue("@Telefone", telefone);
+					cmd.Parameters.AddWithValue("@Senha", senha);
+
+					conn.Open();
+					cmd.ExecuteNonQuery();
+
+					mensagem = "Usuário cadastrado com sucesso!";
+				}
+			}
+			catch (SqlException ex)
+			{
+				if (ex.Number == 2627 || ex.Number == 2601)
+				{
+					mensagem = "Erro: CPF já cadastrado.";
+				}
+				else
+				{
+					mensagem = "Erro: " + ex.Message;
+				}
+			}
 		}
 	}
 }
