@@ -20,6 +20,12 @@ namespace ContaBancaria.DAOs
 		{
 			mensagem = "";
 
+			if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cpf) || string.IsNullOrEmpty(telefone) || string.IsNullOrEmpty(senha))
+			{
+				mensagem = "<div class='alert alert-warning'>Por favor, preencha todos os campos.</div>";
+				return;
+			}
+
 			try
 			{
 				using (SqlConnection conn = new SqlConnection(_conexao))
