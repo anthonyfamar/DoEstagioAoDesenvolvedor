@@ -30,6 +30,7 @@
 
 		<div class="d-flex justify-content-center align-items-center pt-4">
 			<asp:Button runat="server" ID="btnConfirmaSaque" class="btn btn-midnightblueComBorder " text="Confirmar" OnClick="btnConfirmaSaque_Click"/>
+			<a href="PaginaInicial.aspx" class="btn btn-midnightblueComBorder">Voltar</a>
 		</div>
 
     </main>

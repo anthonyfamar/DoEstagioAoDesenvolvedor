@@ -15,6 +15,24 @@ namespace ContaBancaria.Pages
 	{
 
 		/// <summary>
+		/// txtAgencia control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtAgencia;
+
+		/// <summary>
+		/// txtNumeroConta control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
+
+		/// <summary>
 		/// txtNomeCompleto control.
 		/// </summary>
 		/// <remarks>
@@ -40,24 +58,6 @@ namespace ContaBancaria.Pages
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtTelefone;
-
-		/// <summary>
-		/// txtAgencia control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtAgencia;
-
-		/// <summary>
-		/// txtNumeroConta control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
 
 		/// <summary>
 		/// txtSenha control.

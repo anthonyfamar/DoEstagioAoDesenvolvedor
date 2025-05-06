@@ -50,7 +50,7 @@ section::after {
 .ulalinhadoesquerda {
 	padding: 0;
 	margin: 0;
-	text-align: center
+	text-align: left;
 }
 
 .tableInfo {
@@ -90,8 +90,6 @@ section::after {
 .btn-midnightblueNavLateral {
 	background-color: white;
 	color: #191970;
-	padding: 10px;
-	margin-left: 15px;
 	list-style-type: none;
 	cursor: pointer;
 	display: block;
@@ -138,3 +136,4 @@ section::after {
 .espacamentoTop {
 	margin-top: 80px;
 }
+

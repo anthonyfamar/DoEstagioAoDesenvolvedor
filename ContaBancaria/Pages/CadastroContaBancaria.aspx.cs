@@ -28,5 +28,10 @@ namespace ContaBancaria.Pages
 		{
 
 		}
-	}
+
+        protected void BtnVoltar_Click(object sender, EventArgs e)
+        {
+			return;
+        }
+    }
 }

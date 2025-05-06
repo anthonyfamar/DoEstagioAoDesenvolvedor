@@ -31,5 +31,10 @@ namespace ContaBancaria.Pages
 				lblErro.CssClass = "text-danger";
 			}
 		}
+
+		protected void btnVoltar_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

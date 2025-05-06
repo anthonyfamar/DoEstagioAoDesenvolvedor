@@ -12,10 +12,11 @@
             <section>
                 <nav class="banconavbar">
                     <ul class="ulalinhadoesquerda">
-                        <asp:Button runat="server" ID="BtnPaginaInicial" Text="Página Inicial" class="btn btn-midnightblueNavLateral" OnClick="BtnPaginaInicial_Click" />
-                        <asp:Button runat="server" ID="BtnDepositar" text="Depósito" class="btn btn-midnightblueNavLateral" OnClick="BtnDepositar_Click" />
-                        <asp:Button runat="server" ID="BtnSaque" Text="Saque" class="btn btn-midnightblueNavLateral" OnClick="BtnSaque_Click" />
-                        <asp:Button runat="server" ID="BtnTransferir" Text="Transferir" class="btn btn-midnightblueNavLateral" OnClick="BtnTransferir_Click" />
+                        <a href="PaginaInicial.aspx" class="btn btn-midnightblueNavLateral">Página Inicial</a>
+                        <a href="Deposito.aspx" class="btn btn-midnightblueNavLateral">Depósito</a>
+                        <a href="Saque.aspx" class="btn btn-midnightblueNavLateral">Saque</a>
+                        <a href="Transferir.aspx" class="btn btn-midnightblueNavLateral">Transferência</a>
+                        
                     </ul>
                 </nav>
 
