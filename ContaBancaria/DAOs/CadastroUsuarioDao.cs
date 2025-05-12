@@ -16,21 +16,21 @@ namespace ContaBancaria.DAOs
 			_conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
 		}
 
-		public void InserirUsuario(string nome, string cpf, string telefone, string senha, out string mensagem)
+		public int InserirUsuario(string nome, string cpf, string telefone, string senha, out string mensagem)
 		{
 			mensagem = "";
 
 			if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cpf) || string.IsNullOrEmpty(telefone) || string.IsNullOrEmpty(senha))
 			{
 				mensagem = "<div class='alert alert-warning'>Por favor, preencha todos os campos.</div>";
-				return;
+				return 0;
 			}
 
 			try
 			{
 				using (SqlConnection conn = new SqlConnection(_conexao))
 				{
-					string sql = "INSERT INTO Usuario(Nome, Cpf, Telefone, Senha) VALUES (@Nome, @Cpf, @Telefone, @Senha)";
+					string sql = @"INSERT INTO Usuario(Nome, Cpf, Telefone, Senha) VALUES (@Nome, @Cpf, @Telefone, @Senha) SELECT SCOPE_IDENTITY();";
 					SqlCommand cmd = new SqlCommand(sql, conn);
 
 					cmd.Parameters.AddWithValue("@Nome", nome);
@@ -39,9 +39,17 @@ namespace ContaBancaria.DAOs
 					cmd.Parameters.AddWithValue("@Senha", senha);
 
 					conn.Open();
-					cmd.ExecuteNonQuery();
-
-					mensagem = "<div class='alert alert-success'>Usuário cadastrado com sucesso!</div>";
+					object resultado = cmd.ExecuteScalar();
+					if (resultado != null && int.TryParse(resultado.ToString(), out int idUsuario))
+					{
+						mensagem = "<div class='alert alert-success'>Usuário cadastrado com sucesso!</div>";
+						return idUsuario;
+					}
+					else
+					{
+						mensagem = "<div class='alert alert-danger'>Erro ao cadastrar o usuário. ID não retornado.</div>";
+						return 0;
+					}
 				}
 			}
 			catch (SqlException ex)
@@ -54,6 +62,7 @@ namespace ContaBancaria.DAOs
 				{
 					mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
 				}
+				return 0;
 			}
 		}
 	}

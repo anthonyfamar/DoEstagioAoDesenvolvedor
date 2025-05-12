@@ -16,29 +16,31 @@ namespace ContaBancaria.DAOs
 			_conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
 		}
 
-		public void InserirAgencia(string numAgencia, out string mensagem)
+		public int InserirAgencia(string numAgencia, out string mensagem)
 		{
 			mensagem = "";
 
 			if (string.IsNullOrEmpty(numAgencia))
 			{
 				mensagem = "<div class='alert alert-warning'>Por favor, preencha todos os campos.</div>";
-				return;
+				return 0;
 			}
 
 			try
 			{
 				using (SqlConnection conn = new SqlConnection(_conexao))
 				{
-					string sql = "INSERT INTO Agencia(NumAgencia) values (@NumAgencia)";
+					string sql = @"INSERT INTO Agencia(NumAgencia) values (@NumAgencia) SELECT SCOPE_IDENTITY();";
 					SqlCommand cmd = new SqlCommand(sql, conn);
 
 					cmd.Parameters.AddWithValue("@NumAgencia", numAgencia);
 
 					conn.Open();
-					cmd.ExecuteNonQuery();
+					object result = cmd.ExecuteScalar();
+					int idAgencia = Convert.ToInt32(result);
 
 					mensagem = "<div class='alert alert-success'>Agência cadastrada com sucesso!</div>";
+					return idAgencia;
 				}
 			}
 			catch (SqlException ex)
@@ -50,8 +52,8 @@ namespace ContaBancaria.DAOs
 				else
 				{
 					mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
-				}	
-
+				}
+				return 0;
 			}
 
 
