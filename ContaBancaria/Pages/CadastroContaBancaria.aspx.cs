@@ -27,11 +27,14 @@ namespace ContaBancaria.Pages
 
 		protected void BtnCadastrar_Click(object sender, EventArgs e)
 		{
-			CadastroUsuarioDao dao = new CadastroUsuarioDao();
+			CadastroUsuarioDao daoUsuario = new CadastroUsuarioDao();
+			CadastroAgenciaDao daoAgencia = new CadastroAgenciaDao();
 			string mensagem;
 
-			dao.InserirUsuario(txtNomeCompleto.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, out mensagem);
+			daoUsuario.InserirUsuario(txtNomeCompleto.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, out mensagem);
+			daoAgencia.InserirAgencia(ListaAgencia.Text, out mensagem);
 			lblMensagem.Text = mensagem;
+
 
 		}
 	}

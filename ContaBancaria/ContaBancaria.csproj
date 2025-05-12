@@ -188,6 +188,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="DAOs\CadastroAgenciaDao.cs" />
+    <Compile Include="DAOs\CadastroContaDao.cs" />
     <Compile Include="DAOs\CadastroUsuarioDao.cs" />
     <Compile Include="Models\ContaBancaria.cs" />
     <Compile Include="Models\OperacoesService.cs" />

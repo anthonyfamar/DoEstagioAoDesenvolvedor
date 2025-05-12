@@ -24,10 +24,5 @@ namespace ContaBancaria.Pages
 			Session["Saldo"] = saldoAtual;
 			Response.Redirect("PaginaInicial.aspx");
 		}
-
-        protected void btnVoltar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
