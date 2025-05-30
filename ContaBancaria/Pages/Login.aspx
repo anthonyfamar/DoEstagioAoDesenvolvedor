@@ -17,7 +17,7 @@
                 </div>
 
                 <asp:Button runat="server" ID="btnLogin" Text="Entrar" class="btn w-100 text-white" style="background-color: #191970; margin-left: 35px" OnClick="btnLogin_Click" />
-                <asp:Label runat="server" ID="lblMensagem" EnableViewState="false"></asp:Label>
+                <asp:Label class="mt-3" runat="server" ID="lblMensagem" EnableViewState="false"></asp:Label>
 
                 <div class="text-center mt-3">
                     <a href="CadastroContaBancaria.aspx" style="color: #191970;">Cadastrar nova conta</a>

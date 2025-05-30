@@ -13,33 +13,40 @@ namespace ContaBancaria.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
-				if (Session["Saldo"] == null)
-				{
-					Session["Saldo"] = 0M;
-				}
-				AtualizarSaldoNaTela();
-			}
+            if (!IsPostBack)
+            {
 
-			if (!IsPostBack)
-			{
-				ViewState["ContaReal"] = NumeroDaConta.Text;
-				ViewState["ContaVisivel"] = false;
-				NumeroDaConta.Text = "-----";
-			}
+                if (Session["IdConta"] != null)
+                {
+                    TitularDaConta.Text = Session["Nome"].ToString();
+                    NumeroDaConta.Text = Session["NumConta"].ToString();
+                    SaldoAtual.Text = Convert.ToDecimal(Session["Saldo"]).ToString("C"); 
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
 
-			if (!IsPostBack)
-			{
-				ViewState["SaldoVisivel"] = false;
-				SaldoAtual.Text = "-----";
-			}
-		}
+                if (Session["Saldo"] == null)
+                {
+                    Session["Saldo"] = 0M;
+                }
+                AtualizarSaldoNaTela();
+
+                ViewState["ContaReal"] = NumeroDaConta.Text;
+                ViewState["ContaVisivel"] = false;
+                NumeroDaConta.Text = "-----";
+
+                ViewState["SaldoVisivel"] = false;
+                SaldoAtual.Text = "-----";
+            }
+        }
 
 		private void AtualizarSaldoNaTela()
 		{
-			decimal saldo = (decimal)Session["Saldo"];
-			SaldoAtual.Text = saldo.ToString("F2");
+            decimal saldo = Convert.ToDecimal(Session["Saldo"]);
+            SaldoAtual.Text = saldo.ToString("F2");
 		}
 
 		protected void BtnDepositar_Click(object sender, EventArgs e)
@@ -83,9 +90,9 @@ namespace ContaBancaria.Pages
 		protected void BtnMostrarSaldo_Click(object sender, EventArgs e)
 		{
 			bool visivel = (bool)(ViewState["SaldoVisivel"]);
-			decimal saldo = (decimal)Session["Saldo"];
+            decimal saldo = Convert.ToDecimal(Session["Saldo"]);
 
-			if (visivel)
+            if (visivel)
 			{
 				SaldoAtual.Text = "-----";
 				BtnMostrarSaldo.Text = "Mostrar Saldo";

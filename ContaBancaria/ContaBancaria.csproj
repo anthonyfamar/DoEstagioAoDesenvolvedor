@@ -192,6 +192,7 @@
     <Compile Include="DAOs\CadastroContaDao.cs" />
     <Compile Include="DAOs\CadastroUsuarioDao.cs" />
     <Compile Include="Models\ContaBancaria.cs" />
+    <Compile Include="Utils\EsconderMensagem.cs" />
     <Compile Include="Models\OperacoesService.cs" />
     <Compile Include="Pages\CadastroContaBancaria.aspx.cs">
       <DependentUpon>CadastroContaBancaria.aspx</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using ContaBancaria.DAOs;
+using ContaBancaria.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -76,7 +77,7 @@ namespace ContaBancaria.Pages
             if (idAgencia == 0)
             {
                 lblMensagem.Text = "<div class='alert alert-warning'>Por favor, selecione uma agência válida.</div>";
-                RegistrarScriptOcultarMensagem();
+                EsconderMensagem.RegistrarScriptOcultarMensagem(this, lblMensagem.ClientID);
                 return;
             }
 
@@ -84,7 +85,7 @@ namespace ContaBancaria.Pages
             if (idUsuario == 0)
             {
                 lblMensagem.Text = mensagem;
-                RegistrarScriptOcultarMensagem();
+                EsconderMensagem.RegistrarScriptOcultarMensagem(this, lblMensagem.ClientID);
                 return;
             }
 
@@ -96,24 +97,7 @@ namespace ContaBancaria.Pages
                 LimparCampos();
             }
 
-            RegistrarScriptOcultarMensagem();
-        }
-
-        private void RegistrarScriptOcultarMensagem()
-        {
-            string script = $@"
-        setTimeout(function () {{
-            var msg = document.getElementById('{lblMensagem.ClientID}');
-            if (msg) {{
-                msg.style.transition = 'opacity 1s';
-                msg.style.opacity = 0;
-                setTimeout(function () {{
-                    msg.style.display = 'none';
-                }}, 1000);
-            }}
-        }}, 5000);";
-
-            ClientScript.RegisterStartupScript(this.GetType(), "HideMessage", script, true);
+            EsconderMensagem.RegistrarScriptOcultarMensagem(this, lblMensagem.ClientID);
         }
 
         private void LimparCampos()

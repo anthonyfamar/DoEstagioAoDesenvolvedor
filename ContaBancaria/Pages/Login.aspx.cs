@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContaBancaria.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -24,12 +25,12 @@ namespace ContaBancaria.Pages
             using (SqlConnection conn = new SqlConnection(conexao))
             {
                 string sql = @"SELECT c.Id, c.NumConta, u.Nome, c.Saldo 
-                       FROM Conta c
-                       INNER JOIN Usuario u ON c.IdUsuario = u.Id
-                       WHERE c.NumConta = @NumConta AND c.Senha = @Senha";
+                       FROM ContaBancaria c
+                       INNER JOIN Usuario u ON c.UsuarioId = u.Id
+                       WHERE c.NumConta = @NumConta AND u.Senha = @Senha";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@NumeroConta", txtConta.Text.Trim());
+                cmd.Parameters.AddWithValue("@NumConta", txtConta.Text.Trim());
                 cmd.Parameters.AddWithValue("@Senha", senha);
 
                 try
@@ -49,11 +50,13 @@ namespace ContaBancaria.Pages
                     else
                     {
                         lblMensagem.Text = "<div class='alert alert-danger'>Número da conta ou senha inválidos.</div>";
+                        EsconderMensagem.RegistrarScriptOcultarMensagem(this, lblMensagem.ClientID);
                     }
                 }
                 catch (Exception ex)
                 {
                     lblMensagem.Text = "<div class='alert alert-danger'>Erro no login: " + ex.Message + "</div>";
+                    EsconderMensagem.RegistrarScriptOcultarMensagem(this, lblMensagem.ClientID);
                 }
             }
         }
