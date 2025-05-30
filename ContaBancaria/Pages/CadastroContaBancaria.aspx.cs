@@ -25,31 +25,29 @@ namespace ContaBancaria.Pages
 			return rand.Next(100000, 999999).ToString();
 		}
 
-		protected void BtnCadastrar_Click(object sender, EventArgs e)
-		{
+        protected void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+            CadastroUsuarioDao daoUsuario = new CadastroUsuarioDao();
+            CadastroAgenciaDao daoAgencia = new CadastroAgenciaDao();
+            CadastroContaDao daoConta = new CadastroContaDao();
+            string mensagem;
 
-			CadastroUsuarioDao daoUsuario = new CadastroUsuarioDao();
-			CadastroAgenciaDao daoAgencia = new CadastroAgenciaDao();
-			CadastroContaDao daoConta = new CadastroContaDao();
-			string mensagem;
+            int idAgencia = Convert.ToInt32(ListaAgencia.SelectedValue);
+            if (idAgencia == 0)
+            {
+                lblMensagem.Text = "<div class='alert alert-warning'>Por favor, selecione uma agência válida.</div>";
+                return;
+            }
 
-			int idUsuario = daoUsuario.InserirUsuario(txtNomeCompleto.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, out mensagem);
-			if (idUsuario == 0)
-			{
-				lblMensagem.Text = mensagem;
-				return;
-			}
+            int idUsuario = daoUsuario.InserirUsuario(txtNomeCompleto.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, out mensagem);
+            if (idUsuario == 0)
+            {
+                lblMensagem.Text = mensagem;
+                return;
+            }
 
-			int idAgencia = daoAgencia.InserirAgencia(ListaAgencia.Text, out mensagem);
-			if (idAgencia == 0)
-			{
-				lblMensagem.Text = mensagem;
-				return;
-			}
-
-			daoConta.InserirConta(txtNumeroConta.Text, idUsuario, idAgencia, out mensagem);
-			lblMensagem.Text = mensagem;
-
-		}
-	}
+            daoConta.InserirConta(txtNumeroConta.Text, idUsuario, idAgencia, out mensagem);
+            lblMensagem.Text = mensagem;
+        }
+    }
 }

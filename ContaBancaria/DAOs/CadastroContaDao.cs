@@ -30,15 +30,16 @@ namespace ContaBancaria.DAOs
 			{
 				using (SqlConnection conn = new SqlConnection(_conexao))
 				{
-					string sql = "INSERT INTO ContaBancaria(NumConta, IdUsuario, IdAgencia) VALUES (@NumConta, @IdUsuario, @IdAgencia)";
+					string sql = "INSERT INTO ContaBancaria(NumConta, UsuarioId, AgenciaId, Saldo) VALUES (@NumConta, @UsuarioId, @AgenciaId, @Saldo)";
 
 					SqlCommand cmd = new SqlCommand(sql, conn);
 
 					cmd.Parameters.AddWithValue("@NumConta", numConta);
-					cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
-					cmd.Parameters.AddWithValue("@IdAgencia", idAgencia);
+					cmd.Parameters.AddWithValue("@UsuarioId", idUsuario);
+					cmd.Parameters.AddWithValue("@AgenciaId", idAgencia);
+					cmd.Parameters.AddWithValue("@Saldo", 0.0m);
 
-					conn.Open();
+                    conn.Open();
 					cmd.ExecuteNonQuery();
 
 					mensagem = "<div class='alert alert-success'>Conta cadastrada com sucesso!</div>";

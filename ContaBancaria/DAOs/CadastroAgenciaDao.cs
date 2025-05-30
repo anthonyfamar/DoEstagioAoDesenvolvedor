@@ -7,56 +7,44 @@ using System.Web;
 
 namespace ContaBancaria.DAOs
 {
-	public class CadastroAgenciaDao
-	{
-		private readonly string _conexao;
+    public class CadastroAgenciaDao
+    {
+        private readonly string _conexao;
 
-		public CadastroAgenciaDao()
-		{
-			_conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
-		}
+        public CadastroAgenciaDao()
+        {
+            _conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
+        }
 
-		public int InserirAgencia(string numAgencia, out string mensagem)
-		{
-			mensagem = "";
+        public List<string> ListarAgencias(out string mensagem)
+        {
+            mensagem = "";
+            List<string> agencias = new List<string>();
 
-			if (string.IsNullOrEmpty(numAgencia))
-			{
-				mensagem = "<div class='alert alert-warning'>Por favor, preencha todos os campos.</div>";
-				return 0;
-			}
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conexao))
+                {
+                    string sql = "SELECT NumAgencia FROM Agencia";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
 
-			try
-			{
-				using (SqlConnection conn = new SqlConnection(_conexao))
-				{
-					string sql = @"INSERT INTO Agencia(NumAgencia) values (@NumAgencia) SELECT SCOPE_IDENTITY();";
-					SqlCommand cmd = new SqlCommand(sql, conn);
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-					cmd.Parameters.AddWithValue("@NumAgencia", numAgencia);
+                    while (reader.Read())
+                    {
+                        agencias.Add(reader["NumAgencia"].ToString());
+                    }
 
-					conn.Open();
-					object result = cmd.ExecuteScalar();
-					int idAgencia = Convert.ToInt32(result);
+                    mensagem = "<div class='alert alert-success'>Agências carregadas com sucesso!</div>";
+                }
+            }
+            catch (SqlException ex)
+            {
+                mensagem = $"<div class='alert alert-danger'>Erro ao buscar agências: {ex.Message}</div>";
+            }
 
-					mensagem = "<div class='alert alert-success'>Agência cadastrada com sucesso!</div>";
-					return idAgencia;
-				}
-			}
-			catch (SqlException ex)
-			{
-				if (ex.Number == 2627 || ex.Number == 2601)
-				{
-					mensagem = "<div class='alert alert-danger'>Erro: Agência já cadastrada.</div>";
-				}
-				else
-				{
-					mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
-				}
-				return 0;
-			}
-
-
-		}
-	}
+            return agencias;
+        }
+    }
 }

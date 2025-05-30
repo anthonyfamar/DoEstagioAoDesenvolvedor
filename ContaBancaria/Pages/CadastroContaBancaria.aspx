@@ -16,7 +16,7 @@
                 <div class="mb-3" style="margin-left: 35px">
                     <label for="ListaAgencia" class="form-label">Agência</label>
                     <asp:DropDownList runat="server" ID="ListaAgencia" CssClass="form-select" >
-                        <asp:ListItem>Selecione uma opção</asp:ListItem>
+                        <asp:ListItem Text="Selecione uma opção" Value="0"></asp:ListItem>
                         <asp:ListItem Text="1958" Value="1958"></asp:ListItem>
                         <asp:ListItem Text="1936" Value="1936"></asp:ListItem>
                         <asp:ListItem Text="3214" Value="3214"></asp:ListItem>

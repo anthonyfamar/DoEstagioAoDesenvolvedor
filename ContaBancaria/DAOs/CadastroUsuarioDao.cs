@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 namespace ContaBancaria.DAOs
 {
-	public class CadastroUsuarioDao //Classe que conversa com o banco de dados
+	public class CadastroUsuarioDao
 	{
 		private readonly string _conexao;
 
