@@ -11,8 +11,12 @@ namespace ContaBancaria.Pages
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
-		}
+            if (Session["IdConta"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+        }
 
 		protected void btnConfirmaSaque_Click(object sender, EventArgs e)
 		{

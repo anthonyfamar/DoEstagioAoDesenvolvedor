@@ -13,6 +13,12 @@ namespace ContaBancaria.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            if (Session["IdConta"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
 

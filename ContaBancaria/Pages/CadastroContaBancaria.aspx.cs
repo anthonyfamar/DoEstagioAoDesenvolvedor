@@ -15,7 +15,13 @@ namespace ContaBancaria.Pages
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
+            if (Session["IdConta"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
+            if (!IsPostBack)
 			{
 				string numeroConta = GerarNumeroContaUnico();
 				txtNumeroConta.Text = numeroConta;
