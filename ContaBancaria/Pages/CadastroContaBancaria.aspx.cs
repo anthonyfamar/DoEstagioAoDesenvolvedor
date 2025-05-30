@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ContaBancaria.DAOs;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ContaBancaria.DAOs;
 
 namespace ContaBancaria.Pages
 {
@@ -17,9 +19,47 @@ namespace ContaBancaria.Pages
 				string numeroConta = GerarNumeroContaUnico();
 				txtNumeroConta.Text = numeroConta;
 			}
-		}
 
-		private string GerarNumeroContaUnico()
+            if (!IsPostBack)
+            {
+                PopularAgencias();
+            }
+        }
+
+        private void PopularAgencias()
+        {
+            string conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(conexao))
+            {
+                string sql = "SELECT Id, NumAgencia FROM Agencia";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    ListaAgencia.Items.Clear();
+
+                    ListaAgencia.Items.Add(new ListItem("Selecione uma opção", "0"));
+
+                    while (reader.Read())
+                    {
+                        string numAgencia = reader["NumAgencia"].ToString();
+                        string idAgencia = reader["Id"].ToString();
+
+                        ListaAgencia.Items.Add(new ListItem(numAgencia, idAgencia));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao carregar agências: " + ex.Message);
+                }
+            }
+        }
+
+        private string GerarNumeroContaUnico()
 		{
 			var rand = new Random();
 			return rand.Next(100000, 999999).ToString();
@@ -36,6 +76,7 @@ namespace ContaBancaria.Pages
             if (idAgencia == 0)
             {
                 lblMensagem.Text = "<div class='alert alert-warning'>Por favor, selecione uma agência válida.</div>";
+                RegistrarScriptOcultarMensagem();
                 return;
             }
 
@@ -43,11 +84,46 @@ namespace ContaBancaria.Pages
             if (idUsuario == 0)
             {
                 lblMensagem.Text = mensagem;
+                RegistrarScriptOcultarMensagem();
                 return;
             }
 
             daoConta.InserirConta(txtNumeroConta.Text, idUsuario, idAgencia, out mensagem);
             lblMensagem.Text = mensagem;
+
+            if (mensagem.Contains("sucesso"))
+            {
+                LimparCampos();
+            }
+
+            RegistrarScriptOcultarMensagem();
+        }
+
+        private void RegistrarScriptOcultarMensagem()
+        {
+            string script = $@"
+        setTimeout(function () {{
+            var msg = document.getElementById('{lblMensagem.ClientID}');
+            if (msg) {{
+                msg.style.transition = 'opacity 1s';
+                msg.style.opacity = 0;
+                setTimeout(function () {{
+                    msg.style.display = 'none';
+                }}, 1000);
+            }}
+        }}, 5000);";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "HideMessage", script, true);
+        }
+
+        private void LimparCampos()
+        {
+            txtNomeCompleto.Text = "";
+            txtCpf.Text = "";
+            txtTelefone.Text = "";
+            txtSenha.Text = "";
+            txtNumeroConta.Text = GerarNumeroContaUnico();
+            ListaAgencia.SelectedIndex = 0;
         }
     }
 }

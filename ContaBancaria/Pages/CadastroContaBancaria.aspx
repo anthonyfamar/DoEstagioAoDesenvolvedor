@@ -17,10 +17,10 @@
                     <label for="ListaAgencia" class="form-label">Agência</label>
                     <asp:DropDownList runat="server" ID="ListaAgencia" CssClass="form-select" >
                         <asp:ListItem Text="Selecione uma opção" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="1958" Value="1958"></asp:ListItem>
-                        <asp:ListItem Text="1936" Value="1936"></asp:ListItem>
-                        <asp:ListItem Text="3214" Value="3214"></asp:ListItem>
-                        <asp:ListItem Text="3384" Value="3384"></asp:ListItem>
+                        <asp:ListItem Text="1958" Value="6"></asp:ListItem>
+                        <asp:ListItem Text="1936" Value="8"></asp:ListItem>
+                        <asp:ListItem Text="3214" Value="9"></asp:ListItem>
+                        <asp:ListItem Text="3384" Value="10"></asp:ListItem>
                     </asp:DropDownList>
                 </div>
 

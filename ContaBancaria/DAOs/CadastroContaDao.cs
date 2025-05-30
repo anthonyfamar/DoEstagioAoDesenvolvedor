@@ -16,7 +16,23 @@ namespace ContaBancaria.DAOs
 			_conexao = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
 		}
 
-		public void InserirConta(string numConta, int idUsuario, int idAgencia, out string mensagem)
+        public bool ContaExiste(string numConta, int idAgencia)
+        {
+            using (SqlConnection conn = new SqlConnection(_conexao))
+            {
+                string sql = "SELECT COUNT(*) FROM ContaBancaria WHERE NumConta = @NumConta AND AgenciaId = @IdAgencia";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@NumConta", numConta);
+                cmd.Parameters.AddWithValue("@IdAgencia", idAgencia);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+        }
+
+        public void InserirConta(string numConta, int idUsuario, int idAgencia, out string mensagem)
 		{
 			mensagem = "";
 
@@ -26,7 +42,13 @@ namespace ContaBancaria.DAOs
 				return;
 			}
 
-			try
+            if (ContaExiste(numConta, idAgencia))
+            {
+                mensagem = "<div class='alert alert-danger'>Erro: Já existe uma conta com esse número nesta agência.</div>";
+                return;
+            }
+
+            try
 			{
 				using (SqlConnection conn = new SqlConnection(_conexao))
 				{
@@ -45,18 +67,11 @@ namespace ContaBancaria.DAOs
 					mensagem = "<div class='alert alert-success'>Conta cadastrada com sucesso!</div>";
 				}
 			}
-			catch (SqlException ex)
-			{
-				if (ex.Number == 2627 || ex.Number == 2601)
-				{
-					mensagem = "<div class='alert alert-danger'>Erro: Conta já cadastrada.</div>";
-				}
-				else
-				{
-					mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
-				}
-			}
+            catch (SqlException ex)
+            {
+                mensagem = $"<div class='alert alert-danger'>Erro: {ex.Message}</div>";
+            }
 
-		}
+        }
 	}
 }
