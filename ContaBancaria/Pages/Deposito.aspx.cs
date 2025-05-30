@@ -9,8 +9,8 @@ namespace ContaBancaria.Pages
 {
 	public partial class Deposito : Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+        protected void Page_Load(object sender, EventArgs e)
+        {
             if (Session["IdConta"] == null)
             {
                 Response.Redirect("Login.aspx");

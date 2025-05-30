@@ -16,6 +16,24 @@ namespace ContaBancaria.Pages
                 Response.Redirect("Login.aspx");
                 return;
             }
+
+            if (!IsPostBack)
+            {
+                // Verifica se usuário está logado
+                if (Session["IdConta"] != null)
+                {
+                    // Preenche campos com dados da sessão
+                    ListaAgencia.SelectedValue = Session["AgenciaId"].ToString();  // ← IMPORTANTE: Certifique-se que você salvou esse valor na sessão no login
+                    txtContaDeposito.Text = Session["NumConta"].ToString();
+                    txtCPF.Text = Session["Cpf"].ToString();
+                }
+                else
+                {
+                    // Se não estiver logado, redireciona para login
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
+            }
         }
 
 		protected void btnConfirmaSaque_Click(object sender, EventArgs e)

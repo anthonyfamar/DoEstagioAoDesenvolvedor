@@ -8,9 +8,20 @@
 				</header>
 
 				<div class="card pt-2 pb-3 border-0" style="padding-left:80px">
+					<div class="mb-3" >
+						<label for="ListaAgencia" class="form-label">Agência</label>
+						<asp:DropDownList runat="server" ID="ListaAgencia" CssClass="form-select" Enabled="false">
+							<asp:ListItem Text="Selecione uma opção" Value="0"></asp:ListItem>
+							<asp:ListItem Text="1958" Value="6"></asp:ListItem>
+							<asp:ListItem Text="1936" Value="8"></asp:ListItem>
+							<asp:ListItem Text="3214" Value="9"></asp:ListItem>
+							<asp:ListItem Text="3384" Value="10"></asp:ListItem>
+						</asp:DropDownList>
+					</div>
+
 					<div class="mb-3">
-						<label for="txtAgencia">Agência:</label>
-						<asp:TextBox runat="server" ID="txtAgencia" class="form-control"></asp:TextBox>
+						<label for="txtContaDeposito">Conta</label>
+						<asp:TextBox runat="server" ID="txtContaDeposito" class="form-control" ></asp:TextBox>
 					</div>
 
 					<div class="mb-3">

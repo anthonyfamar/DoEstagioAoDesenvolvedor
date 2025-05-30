@@ -24,10 +24,10 @@ namespace ContaBancaria.Pages
 
             using (SqlConnection conn = new SqlConnection(conexao))
             {
-                string sql = @"SELECT c.Id, c.NumConta, u.Nome, c.Saldo 
-                       FROM ContaBancaria c
-                       INNER JOIN Usuario u ON c.UsuarioId = u.Id
-                       WHERE c.NumConta = @NumConta AND u.Senha = @Senha";
+                string sql = @"SELECT c.Id, c.NumConta, u.Nome, c.Saldo, u.Cpf, c.AgenciaId
+                               FROM ContaBancaria c
+                               INNER JOIN Usuario u ON c.UsuarioId = u.Id
+                               WHERE c.NumConta = @NumConta AND u.Senha = @Senha";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@NumConta", txtConta.Text.Trim());
@@ -44,6 +44,8 @@ namespace ContaBancaria.Pages
                         Session["NumConta"] = reader["NumConta"].ToString();
                         Session["Nome"] = reader["Nome"].ToString();
                         Session["Saldo"] = reader["Saldo"].ToString();
+                        Session["Cpf"] = reader["Cpf"].ToString();
+                        Session["AgenciaId"] = reader["AgenciaId"].ToString();
 
                         Response.Redirect("PaginaInicial.aspx");
                     }
