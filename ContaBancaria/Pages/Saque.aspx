@@ -21,12 +21,12 @@
 
 					<div class="mb-3">
 						<label for="txtContaDeposito">Conta</label>
-						<asp:TextBox runat="server" ID="txtContaDeposito" class="form-control" ></asp:TextBox>
+						<asp:TextBox runat="server" ID="txtContaDeposito" class="form-control" ReadOnly="true" ></asp:TextBox>
 					</div>
 
 					<div class="mb-3">
 						<label for="txtCPF">CPF:</label>
-						<asp:TextBox runat="server" ID="txtCPF" class="form-control"></asp:TextBox>
+						<asp:TextBox runat="server" ID="txtCPF" class="form-control" ReadOnly="true"></asp:TextBox>
 					</div>
 
 					<div class="mb-3">
