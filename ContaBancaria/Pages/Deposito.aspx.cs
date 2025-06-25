@@ -20,13 +20,17 @@ namespace ContaBancaria.Pages
 
 		protected void btnConfirmaDeposito_Click(object sender, EventArgs e)
 		{
-			decimal valorDeposito = decimal.Parse(txtValor.Text);
-			decimal saldoAtual = (decimal)(Session["Saldo"] ?? 0M);
 
-			saldoAtual += valorDeposito;
+			string numConta = txtContaDeposito.Text.Trim();
+            string cpf = txtCPF.Text.Trim();
+            int adenciaId = int.Parse(ListaAgencia.SelectedValue);
+            decimal valor;
 
-			Session["Saldo"] = saldoAtual;
-			Response.Redirect("PaginaInicial.aspx");
+            if (!decimal.TryParse(txtValor.Text, out valor) || valor <= 0)
+            {
+                lblMensagem.Text = "<div class='alert alert-warning'>Informe um valor válido para depósito.</div>";
+                return;
+            }
 		}
     }
 }
