@@ -19,17 +19,15 @@ namespace ContaBancaria.Pages
 
             if (!IsPostBack)
             {
-                // Verifica se usuário está logado
                 if (Session["IdConta"] != null)
                 {
-                    // Preenche campos com dados da sessão
-                    ListaAgencia.SelectedValue = Session["AgenciaId"].ToString();  // ← IMPORTANTE: Certifique-se que você salvou esse valor na sessão no login
+                    ListaAgencia.SelectedValue = Session["AgenciaId"].ToString(); 
                     txtContaDeposito.Text = Session["NumConta"].ToString();
                     txtCPF.Text = Session["Cpf"].ToString();
                 }
                 else
                 {
-                    // Se não estiver logado, redireciona para login
+
                     Response.Redirect("Login.aspx");
                     return;
                 }
@@ -38,20 +36,13 @@ namespace ContaBancaria.Pages
 
 		protected void btnConfirmaSaque_Click(object sender, EventArgs e)
 		{
-			decimal valorSaque = decimal.Parse(txtValor.Text);
-			decimal saldoAtual = (decimal)(Session["Saldo"] ?? 0M);
+            decimal valor;
 
-			if (valorSaque <= saldoAtual)
-			{
-				saldoAtual -= valorSaque;
-				Session["Saldo"] = saldoAtual;
-				Response.Redirect("PaginaInicial.aspx");
-			}
-			else
-			{
-				lblErro.Text = "Saldo Insuficiente!";
-				lblErro.CssClass = "text-danger";
-			}
+            if (!decimal.TryParse(txtValor.Text, out valor) || valor <= 0)
+            {
+                lblMensagem.Text = "<div class='alert alert-warning'>Informe um valor válido para saque.</div>";
+                return;
+            }
 		}
 
 		protected void btnVoltar_Click(object sender, EventArgs e)

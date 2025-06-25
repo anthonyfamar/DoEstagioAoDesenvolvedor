@@ -7,6 +7,8 @@
 					<h3 class="header">Sistema bancário -  Saque</h3>
 				</header>
 
+				<asp:Label ID="lblMensagem" runat="server" style="text-align:center" />
+
 				<div class="card pt-2 pb-3 border-0" style="padding-left:80px">
 					<div class="mb-3" >
 						<label for="ListaAgencia" class="form-label">Agência</label>
